@@ -14,6 +14,7 @@ Static SEO site for `willaitakemyjob.co.uk`, ready for GitHub Pages.
 - SEO title, description, canonical URL, Open Graph, Twitter card metadata, FAQ schema, robots.txt, sitemap.xml, favicon, and web app manifest
 - Google Analytics 4 tag (`G-X098VPWYNT`) installed across generated pages
 - AI-readable `llms.txt` and expanded `llms-full.txt` files for agents that support the emerging convention
+- WebSite SearchAction schema, breadcrumb schema, and disclosure page for future affiliate or sponsor placements
 
 ## GitHub Pages launch path
 
@@ -35,7 +36,7 @@ The site is generated from `tools/build-site.js`.
 node tools/build-site.js
 ```
 
-Run this after adding new roles or changing templates. It rebuilds `index.html`, role pages, cluster pages, `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`, `llms.txt`, `llms-full.txt`, favicon/social assets, the web manifest, and `404.html`.
+Run this after adding new roles or changing templates. It rebuilds `index.html`, role pages, cluster pages, disclosure pages, `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`, `llms.txt`, `llms-full.txt`, favicon/social assets, the web manifest, and `404.html`.
 
 ## First monetisation options
 

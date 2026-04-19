@@ -159,15 +159,42 @@ function riskLabel(score) {
   return "Lower change";
 }
 
+function jsonLd(data) {
+  return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+}
+
+function breadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+}
+
+function breadcrumbNav(items) {
+  return `<nav class="breadcrumbs" aria-label="Breadcrumbs">${items.map((item, index) => {
+    const last = index === items.length - 1;
+    const label = esc(item.name);
+    const crumb = last ? `<span>${label}</span>` : `<a href="${item.href}">${label}</a>`;
+    return `${index ? "<span>/</span>" : ""}${crumb}`;
+  }).join("")}</nav>`;
+}
+
 function pageShell({ title, description, canonical, body, schema = "" }) {
-  const organizationSchema = `<script type="application/ld+json">${JSON.stringify({
+  const organizationSchema = jsonLd({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Will AI Take My Job?",
     url: baseUrl,
     email: "hello@willaitakemyjob.co.uk",
+    logo: `${baseUrl}/favicon.svg`,
     sameAs: []
-  })}</script>`;
+  });
   return `<!doctype html>
 <html lang="en-GB">
   <head>
@@ -238,6 +265,7 @@ function footer() {
         <a href="/methodology/">Methodology</a>
         <a href="/about/">About</a>
         <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/disclosure/">Disclosure</a>
         <a href="/advertise/">Advertise</a>
         <a href="/privacy/">Privacy</a>
         ${links}
@@ -252,7 +280,21 @@ function list(items) {
 function renderIndex() {
   const guideLinks = roles.map((r) => `<a href="/${r.guide}">${esc(r.title)} <span>${r.risk}/100</span></a>`).join("");
   const topCards = roles.slice(0, 12).map((r) => jobCard(r)).join("");
-  const schema = `<script type="application/ld+json">${JSON.stringify({
+  const schema = `${jsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Will AI Take My Job?",
+    url: `${baseUrl}/`,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/?role={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  })}
+    ${jsonLd({
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Will AI Take My Job?",
@@ -261,7 +303,7 @@ function renderIndex() {
     operatingSystem: "Any",
     description: "A free AI job risk checker with practical career guidance for UK workers.",
     offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" }
-  })}</script>`;
+  })}`;
 
   return pageShell({
     title: "Will AI Take My Job? Free UK AI Job Risk Checker",
@@ -274,7 +316,7 @@ function renderIndex() {
           <p class="eyebrow">Free UK AI job checker</p>
           <h1>Will AI take your job?</h1>
           <p class="lead">Search your role for a plain-English risk score, the tasks most likely to change, and the moves that make you harder to replace.</p>
-          <form class="search-box" id="role-form" autocomplete="off">
+          <form class="search-box" id="role-form" autocomplete="off" action="/" method="get">
             <label for="role-input">Job title</label>
             <div class="search-row">
               <input id="role-input" name="role" type="search" list="role-suggestions" placeholder="Try accountant, teacher, designer..." aria-describedby="role-help">
@@ -298,6 +340,17 @@ function renderIndex() {
         <p>Sponsored placement</p>
         <strong>AI tools, course providers, recruiters, CV services, and career brands can reach high-intent UK workers here.</strong>
         <a href="/advertise/">Advertise</a>
+      </section>
+      <section class="resource-strip">
+        <div>
+          <p class="eyebrow">Useful next</p>
+          <h2>Tools and training should earn their place.</h2>
+          <p>Recommendations are labelled clearly and kept separate from the risk scores.</p>
+        </div>
+        <div class="resource-links">
+          <a href="/disclosure/">How recommendations work</a>
+          <a href="/advertise/">Partner with the site</a>
+        </div>
       </section>
       <section class="trust-strip">
         <article><strong>${roles.length}</strong><span>job guides</span></article>
@@ -370,6 +423,11 @@ function renderRolePage(r) {
   const related = roles.filter((item) => item.category === r.category && item.slug !== r.slug).slice(0, 4);
   const queryTitle = r.searchTitle || r.title.toLowerCase();
   const headlineTitle = r.pageTitle || `${r.title} Jobs`;
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: "Jobs", href: "/jobs/", url: `${baseUrl}/jobs/` },
+    { name: r.title, href: `/${r.guide}`, url: `${baseUrl}/${r.guide}` }
+  ];
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -403,8 +461,9 @@ function renderRolePage(r) {
       }
     ]
   };
-  const schema = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>
-    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+  const schema = `${jsonLd(articleSchema)}
+    ${jsonLd(faqSchema)}
+    ${jsonLd(breadcrumbSchema(breadcrumbs))}`;
 
   return pageShell({
     title: `Will AI Take ${headlineTitle}? Risk, Tasks, and Safer Skills`,
@@ -412,7 +471,7 @@ function renderRolePage(r) {
     canonical: `${baseUrl}/${r.guide}`,
     schema,
     body: `<main id="main" class="article-page role-page">
-      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="/">Home</a><span>/</span><a href="/jobs/">Jobs</a><span>/</span><span>${esc(r.title)}</span></nav>
+      ${breadcrumbNav(breadcrumbs)}
       <p class="eyebrow">${esc(r.category)} AI risk</p>
       <h1>Will AI take ${esc(queryTitle)} jobs?</h1>
       <p class="lead">${esc(r.outlook)}</p>
@@ -429,6 +488,7 @@ function renderRolePage(r) {
         <section><h2>Skills that make the role safer</h2>${list(r.safer)}</section>
         <section><h2>Warning signs to watch</h2>${list(r.warningSigns)}</section>
         <section><h2>30-day action plan</h2>${list(r.nextMoves)}</section>
+        <section class="recommendation-note"><h2>Recommended tools and training</h2><p>Use tools that help you check, explain, and improve work you already understand. Paid recommendations are labelled, and the score above stays editorially separate.</p><p><a href="/disclosure/">Read how paid links and sponsors are labelled.</a></p></section>
         <section><h2>How to talk about this in your career</h2><p>Do not present yourself as someone protected from AI. Present yourself as someone who can use AI safely, check its work, understand the domain, and take responsibility for the final outcome. That is a stronger signal to employers than simply saying you know how to prompt.</p></section>
         <section><h2>Sources and context</h2><p>The score is directional. It combines task exposure, need for physical presence, regulation, relationship work, accountability, and speed of current AI adoption. See the full scoring approach on the <a href="/methodology/">methodology page</a> and the editorial standards on the <a href="/editorial-policy/">editorial policy page</a>.</p>${sourceList()}</section>
         <section><h2>FAQs</h2><details open><summary>Will AI replace ${esc(queryTitle)} jobs?</summary><p>${esc(r.verdict)}</p></details><details><summary>Which tasks should ${esc(queryTitle)} workers automate first?</summary><p>Start with low-risk work such as ${esc(r.change.slice(0, 3).join(", ").toLowerCase())}. Keep human review for anything client-facing, regulated, financial, legal, medical, or reputational.</p></details><details><summary>What is the safest next skill?</summary><p>The safest skill is the one that combines AI use with domain judgement. For this role, start with: ${esc(r.safer[0].toLowerCase())}.</p></details></section>
@@ -460,6 +520,10 @@ function newsletter() {
 }
 
 function renderJobsIndex() {
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: "Jobs", href: "/jobs/", url: `${baseUrl}/jobs/` }
+  ];
   const grouped = [...new Set(roles.map((r) => r.category))].map((category) => {
     const cards = roles.filter((r) => r.category === category).map((r) => jobCard(r)).join("");
     return `<section><h2>${esc(category)}</h2><div class="job-grid">${cards}</div></section>`;
@@ -468,7 +532,9 @@ function renderJobsIndex() {
     title: "AI Job Risk by Career: Browse Every Guide",
     description: `Browse ${roles.length} AI job risk guides with scores, exposed tasks, safer skills, and practical next moves.`,
     canonical: `${baseUrl}/jobs/`,
+    schema: jsonLd(breadcrumbSchema(breadcrumbs)),
     body: `<main id="main" class="article-page wide-page">
+      ${breadcrumbNav(breadcrumbs)}
       <p class="eyebrow">Job library</p>
       <h1>AI job risk by career</h1>
       <p class="lead">Every page is a crawlable guide built around a specific search query, with internal links back to the checker and related roles.</p>
@@ -479,6 +545,10 @@ function renderJobsIndex() {
 }
 
 function renderClusterPage(c) {
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: c.h1, href: `/${c.slug}/`, url: `${baseUrl}/${c.slug}/` }
+  ];
   const selected = roles.filter(c.filter).sort((a, b) => c.slug.includes("safe") ? a.risk - b.risk : b.risk - a.risk);
   const content = c.slug === "best-ai-skills-to-learn"
     ? `<section><h2>The core skills</h2>${list(["Prompting with context, constraints, and examples", "Checking AI output for facts, gaps, bias, and tone", "Workflow automation with spreadsheets, forms, docs, and task tools", "Data judgement: knowing what the numbers can and cannot prove", "Domain expertise that lets you spot nonsense quickly", "Communication: turning AI-assisted work into decisions people trust"])}</section><section><h2>A practical learning order</h2>${list(["Week 1: use AI for summaries, checklists, and first drafts only.", "Week 2: build one repeatable workflow for your current job.", "Week 3: learn how to verify sources, numbers, and claims.", "Week 4: document one example where AI helped you produce a better outcome.", "Month 2: learn the specialist tool most relevant to your profession."])}</section>`
@@ -487,7 +557,9 @@ function renderClusterPage(c) {
     title: c.title,
     description: c.description,
     canonical: `${baseUrl}/${c.slug}/`,
+    schema: jsonLd(breadcrumbSchema(breadcrumbs)),
     body: `<main id="main" class="article-page wide-page">
+      ${breadcrumbNav(breadcrumbs)}
       <p class="eyebrow">AI career guide</p>
       <h1>${esc(c.h1)}</h1>
       <p class="lead">${esc(c.intro)}</p>
@@ -501,11 +573,17 @@ function renderClusterPage(c) {
 }
 
 function renderMethodology() {
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: "Methodology", href: "/methodology/", url: `${baseUrl}/methodology/` }
+  ];
   return pageShell({
     title: "Methodology: How the AI Job Risk Scores Work",
     description: "How Will AI Take My Job estimates AI risk using task exposure, physical presence, judgement, regulation, relationships, and adoption speed.",
     canonical: `${baseUrl}/methodology/`,
+    schema: jsonLd(breadcrumbSchema(breadcrumbs)),
     body: `<main id="main" class="article-page">
+      ${breadcrumbNav(breadcrumbs)}
       <p class="eyebrow">Methodology</p>
       <h1>How the AI risk scores work</h1>
       <p class="lead">The score is a practical signal, not a prophecy. It estimates how much of a role's task mix could be changed by AI and automation, then turns that into career guidance.</p>
@@ -523,8 +601,18 @@ function renderMethodology() {
   });
 }
 
-function renderStaticPage(slug, title, description, body) {
-  return pageShell({ title, description, canonical: `${baseUrl}/${slug}/`, body });
+function renderStaticPage(slug, title, description, body, label = title) {
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: label, href: `/${slug}/`, url: `${baseUrl}/${slug}/` }
+  ];
+  return pageShell({
+    title,
+    description,
+    canonical: `${baseUrl}/${slug}/`,
+    schema: jsonLd(breadcrumbSchema(breadcrumbs)),
+    body: body.replace("<main", `<main data-breadcrumbs="${esc(label)}"`).replace(">", `>${breadcrumbNav(breadcrumbs)}`)
+  });
 }
 
 function renderScript() {
@@ -559,13 +647,14 @@ function renderResult(role) {
       <div class="result-actions"><a href="/\${role.guide || "jobs/"}">Read the full guide</a><a class="secondary" href="#newsletter">Track this role</a></div>
     </article>\`;
 }
-function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", \`#\${role.slug}\`); }
+function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", \`?role=\${encodeURIComponent(role.title)}#\${role.slug}\`); }
 if (suggestions) roles.forEach((role) => { const option = document.createElement("option"); option.value = role.title; suggestions.appendChild(option); });
 if (roleForm) roleForm.addEventListener("submit", (event) => { event.preventDefault(); selectRole(roleInput.value); });
 document.addEventListener("click", (event) => { const button = event.target.closest("[data-role]"); if (!button) return; selectRole(button.dataset.role); const checker = document.querySelector("#checker"); if (checker) checker.scrollIntoView({ behavior: "smooth", block: "start" }); });
 if (newsletterForm) newsletterForm.addEventListener("submit", (event) => { event.preventDefault(); const email = document.querySelector("#email-input").value; const signups = JSON.parse(localStorage.getItem("willai-signups") || "[]"); signups.push({ email, date: new Date().toISOString() }); localStorage.setItem("willai-signups", JSON.stringify(signups)); newsletterStatus.textContent = "You are on the list. Swap this form for Beehiiv, ConvertKit, Mailchimp, or Buttondown before launch."; newsletterForm.reset(); });
+const queryRole = new URLSearchParams(location.search).get("role");
 const hashRole = decodeURIComponent(location.hash.replace("#", "").replaceAll("-", " "));
-if (hashRole) selectRole(hashRole);
+if (queryRole) selectRole(queryRole); else if (hashRole) selectRole(hashRole);
 `;
 }
 
@@ -592,6 +681,7 @@ function sitemap() {
     "methodology/",
     "about/",
     "editorial-policy/",
+    "disclosure/",
     "advertise/",
     "privacy/",
     ...clusters.map((c) => `${c.slug}/`),
@@ -885,6 +975,7 @@ writePage("jobs", renderJobsIndex());
 writePage("methodology", renderMethodology());
 writePage("about", renderStaticPage("about", "About Will AI Take My Job", "Will AI Take My Job is a practical career resource for workers who want clear, sourced guidance on how AI may change their role.", `<main id="main" class="article-page"><p class="eyebrow">About</p><h1>AI career advice without the panic theatre.</h1><p class="lead">Will AI Take My Job? helps workers understand which parts of their role are exposed to AI, which parts remain human, and what to do next.</p><div class="article-body"><section><h2>What we believe</h2>${list(["AI changes tasks before it changes whole careers.", "A job title is less useful than a task mix.", "Fear is a poor career strategy, but so is denial.", "The safest workers combine AI fluency with judgement, trust, and domain expertise.", "Good guidance should tell people what to do next, not just scare them."])}</section><section><h2>How the site is built</h2><p>Each guide combines a structured risk model with published labour market research, task-level AI exposure thinking, and practical career advice. The goal is to be useful enough for a worker to make a better decision this week.</p></section><section><h2>Who it is for</h2><p>The site is written for UK workers, students, career changers, managers, recruiters, and anyone trying to separate real AI risk from vague headlines.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 writePage("editorial-policy", renderStaticPage("editorial-policy", "Editorial Policy", "How Will AI Take My Job researches, writes, reviews, and updates AI career guidance.", `<main id="main" class="article-page"><p class="eyebrow">Editorial policy</p><h1>How we keep the guidance useful.</h1><p class="lead">The site is designed to be practical, sourced, and honest about uncertainty.</p><div class="article-body"><section><h2>Research standards</h2>${list(["We prioritise official, primary, or reputable sources for labour market context.", "We separate task exposure from total job replacement.", "We do not present a score as a prediction of redundancy.", "We update the model when better evidence becomes available.", "We avoid advice that depends on panic, miracle tools, or guaranteed outcomes."])}</section><section><h2>Review process</h2><p>Pages are reviewed for clarity, internal consistency, source quality, and whether the recommended actions match the risk profile of the role. The last reviewed date appears on role and methodology pages.</p></section><section><h2>Corrections</h2><p>If a score, source, or recommendation looks wrong, email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>. Corrections should include the page URL and the evidence you think should be considered.</p></section><section><h2>Commercial independence</h2><p>Future sponsorships or affiliate links should be disclosed where they appear. Commercial relationships should not decide a role's risk score.</p></section></div></main>`));
+writePage("disclosure", renderStaticPage("disclosure", "Affiliate and Sponsorship Disclosure", "How Will AI Take My Job labels paid links, sponsorships, recommendations, and commercial relationships.", `<main id="main" class="article-page"><p class="eyebrow">Disclosure</p><h1>Paid links should not blur the advice.</h1><p class="lead">Some pages may later include sponsored placements or affiliate links. Risk scores and editorial guidance should stay independent from those relationships.</p><div class="article-body"><section><h2>Current status</h2><p>The site is not currently using live affiliate links in the job guides. Sponsor placements are available, but paid recommendations should be labelled where they appear.</p></section><section><h2>How recommendations should work</h2>${list(["Recommendations should be relevant to the worker's next step, not just easy to monetise.", "Paid links should be disclosed near the link or placement.", "A role's AI risk score should not change because of a sponsor, advertiser, or affiliate partner.", "If Amazon, course, CV, tool, or book links are added later, they should use clear labels and point to genuinely useful resources."])}</section><section><h2>Advertising</h2><p>Good-fit partners include AI tools, training providers, CV services, recruiters, career coaches, bootcamps, and productivity software. Email <a href="mailto:sponsor@willaitakemyjob.co.uk">sponsor@willaitakemyjob.co.uk</a>.</p></section><section><h2>Corrections</h2><p>If a recommendation looks misleading, out of date, or commercially biased, email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`, "Disclosure"));
 writePage("advertise", renderStaticPage("advertise", "Advertise on Will AI Take My Job", "Reach UK workers searching for AI job risk, career moves, tools, training, and safer skills.", `<main id="main" class="article-page"><p class="eyebrow">Advertise</p><h1>Reach workers already thinking about AI and their career.</h1><p class="lead">Good-fit sponsors include AI tools, training providers, CV services, recruiters, career coaches, bootcamps, and productivity software.</p><div class="article-body"><section><h2>Available placements</h2>${list(["Homepage sponsor strip", "Role guide recommendation blocks", "Newsletter sponsorship", "Dedicated guide sponsorship", "Affiliate placement with disclosure"])}</section><section><h2>Contact</h2><p>Email <a href="mailto:sponsor@willaitakemyjob.co.uk">sponsor@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 writePage("privacy", renderStaticPage("privacy", "Privacy Policy", "Privacy policy for Will AI Take My Job.", `<main id="main" class="article-page"><p class="eyebrow">Privacy</p><h1>Privacy policy</h1><p class="lead">This site uses Google Analytics 4 to understand which pages people visit and improve the guidance. The site keeps direct data collection deliberately light.</p><div class="article-body"><section><h2>Analytics</h2><p>Google Analytics 4 may collect usage information such as page views, device and browser details, approximate location, referral source, and interactions with the site. Google processes this information under its own terms and privacy controls.</p></section><section><h2>Email</h2><p>The demo waitlist stores email addresses in your browser only. Replace it with a real provider before launch.</p></section><section><h2>Advertising and affiliates</h2><p>Future affiliate or sponsored placements should be disclosed clearly on the page where they appear.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 clusters.forEach((cluster) => writePage(cluster.slug, renderClusterPage(cluster)));

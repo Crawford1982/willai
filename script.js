@@ -1384,10 +1384,11 @@ function renderResult(role) {
       <div class="result-actions"><a href="/${role.guide || "jobs/"}">Read the full guide</a><a class="secondary" href="#newsletter">Track this role</a></div>
     </article>`;
 }
-function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", `#${role.slug}`); }
+function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", `?role=${encodeURIComponent(role.title)}#${role.slug}`); }
 if (suggestions) roles.forEach((role) => { const option = document.createElement("option"); option.value = role.title; suggestions.appendChild(option); });
 if (roleForm) roleForm.addEventListener("submit", (event) => { event.preventDefault(); selectRole(roleInput.value); });
 document.addEventListener("click", (event) => { const button = event.target.closest("[data-role]"); if (!button) return; selectRole(button.dataset.role); const checker = document.querySelector("#checker"); if (checker) checker.scrollIntoView({ behavior: "smooth", block: "start" }); });
 if (newsletterForm) newsletterForm.addEventListener("submit", (event) => { event.preventDefault(); const email = document.querySelector("#email-input").value; const signups = JSON.parse(localStorage.getItem("willai-signups") || "[]"); signups.push({ email, date: new Date().toISOString() }); localStorage.setItem("willai-signups", JSON.stringify(signups)); newsletterStatus.textContent = "You are on the list. Swap this form for Beehiiv, ConvertKit, Mailchimp, or Buttondown before launch."; newsletterForm.reset(); });
+const queryRole = new URLSearchParams(location.search).get("role");
 const hashRole = decodeURIComponent(location.hash.replace("#", "").replaceAll("-", " "));
-if (hashRole) selectRole(hashRole);
+if (queryRole) selectRole(queryRole); else if (hashRole) selectRole(hashRole);

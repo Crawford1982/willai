@@ -616,6 +616,47 @@ button:hover,
   font-weight: 850;
 }
 
+.resource-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
+  gap: 1.2rem;
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fffaf1;
+}
+
+.resource-strip h2 {
+  max-width: 16ch;
+}
+
+.resource-strip p:last-child {
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.resource-links {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.resource-links a {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+}
+
 .trust-strip article {
   display: grid;
   gap: 0.2rem;
@@ -696,6 +737,17 @@ button:hover,
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 850;
+}
+
+.recommendation-note {
+  padding: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #eef5ee;
+}
+
+.recommendation-note p:last-child {
+  margin-bottom: 0;
 }
 
 .wide-page {
@@ -840,7 +892,8 @@ details p {
   .link-cloud,
   .related-links,
   .trust-strip,
-  .credibility-band {
+  .credibility-band,
+  .resource-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -888,6 +941,7 @@ details p {
   .related-links,
   .trust-strip,
   .credibility-band,
+  .resource-strip,
   .role-score-row {
     grid-template-columns: 1fr;
   }
