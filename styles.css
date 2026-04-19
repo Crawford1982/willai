@@ -869,6 +869,120 @@ details p {
   text-decoration: none;
 }
 
+.report-page h1 {
+  max-width: 14ch;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.report-actions a {
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: var(--button);
+  color: var(--button-text);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.report-actions a:nth-child(2),
+.report-actions a:nth-child(3) {
+  background: white;
+  color: var(--ink);
+}
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.report-stats article {
+  padding: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.report-stats span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.report-stats strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.report-stats p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.quote-box {
+  padding: 1.2rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--green);
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #eef5ee;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+td {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+td a {
+  color: var(--ink);
+  font-weight: 900;
+}
+
 @media (max-width: 980px) {
   .tool-hero,
   .split-section,
@@ -893,7 +1007,8 @@ details p {
   .related-links,
   .trust-strip,
   .credibility-band,
-  .resource-strip {
+  .resource-strip,
+  .report-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -942,6 +1057,7 @@ details p {
   .trust-strip,
   .credibility-band,
   .resource-strip,
+  .report-stats,
   .role-score-row {
     grid-template-columns: 1fr;
   }
