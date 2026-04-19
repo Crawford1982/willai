@@ -873,6 +873,60 @@ details p {
   max-width: 14ch;
 }
 
+.press-page h1 {
+  max-width: 15ch;
+}
+
+.press-contact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.press-contact div {
+  min-height: 7rem;
+  display: grid;
+  align-content: space-between;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.press-contact span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.press-contact a {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.press-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.press-link-grid a {
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+  font-weight: 850;
+  text-decoration: none;
+}
+
 .report-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1008,6 +1062,8 @@ td a {
   .trust-strip,
   .credibility-band,
   .resource-strip,
+  .press-contact,
+  .press-link-grid,
   .report-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1057,6 +1113,8 @@ td a {
   .trust-strip,
   .credibility-band,
   .resource-strip,
+  .press-contact,
+  .press-link-grid,
   .report-stats,
   .role-score-row {
     grid-template-columns: 1fr;

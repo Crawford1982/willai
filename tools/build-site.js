@@ -245,6 +245,7 @@ function header() {
         <a href="/#checker">Check</a>
         <a href="/jobs/">Jobs</a>
         <a href="/uk-ai-job-risk-index-2026/">Index</a>
+        <a href="/press/">Press</a>
         <a href="/methodology/">Method</a>
         <a href="/about/">About</a>
         <a href="/best-ai-skills-to-learn/">Skills</a>
@@ -262,6 +263,7 @@ function footer() {
       <div class="footer-links">
         <a href="/jobs/">All jobs</a>
         <a href="/uk-ai-job-risk-index-2026/">AI Job Risk Index</a>
+        <a href="/press/">Press</a>
         <a href="/jobs-safe-from-ai/">Safer jobs</a>
         <a href="/jobs-most-at-risk-from-ai/">At-risk jobs</a>
         <a href="/methodology/">Methodology</a>
@@ -351,6 +353,7 @@ function renderIndex() {
         </div>
         <div class="resource-links">
           <a href="/uk-ai-job-risk-index-2026/">Read the UK AI Job Risk Index</a>
+          <a href="/press/">Press and citation kit</a>
           <a href="/disclosure/">How recommendations work</a>
           <a href="/advertise/">Partner with the site</a>
         </div>
@@ -685,6 +688,72 @@ function renderRiskIndex() {
   });
 }
 
+function renderPressPage() {
+  const sortedHigh = [...roles].sort((a, b) => b.risk - a.risk);
+  const sortedLow = [...roles].sort((a, b) => a.risk - b.risk);
+  const highFindings = sortedHigh.slice(0, 5).map((r) => `${r.title} (${r.risk}/100)`);
+  const lowFindings = sortedLow.slice(0, 5).map((r) => `${r.title} (${r.risk}/100)`);
+  const breadcrumbs = [
+    { name: "Home", href: "/", url: `${baseUrl}/` },
+    { name: "Press", href: "/press/", url: `${baseUrl}/press/` }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Press and Citation Kit",
+    description: "Press information, citation notes, downloadable dataset, and contact details for Will AI Take My Job.",
+    url: `${baseUrl}/press/`,
+    dateModified: today,
+    publisher: { "@type": "Organization", name: "Will AI Take My Job?", url: baseUrl }
+  };
+  const schema = `${jsonLd(articleSchema)}
+    ${jsonLd(breadcrumbSchema(breadcrumbs))}`;
+
+  return pageShell({
+    title: "Press and Citation Kit: Will AI Take My Job?",
+    description: "Press contact, citation notes, downloadable dataset, and key findings from the UK AI Job Risk Index 2026.",
+    canonical: `${baseUrl}/press/`,
+    schema,
+    body: `<main id="main" class="article-page wide-page press-page">
+      ${breadcrumbNav(breadcrumbs)}
+      <p class="eyebrow">Press kit</p>
+      <h1>Use the UK AI Job Risk Index in your story.</h1>
+      <p class="lead">Will AI Take My Job? publishes UK-focused role guides and a ranked AI job risk index for journalists, newsletters, career writers, education teams, and researchers.</p>
+      <div class="press-contact">
+        <div><span>Press contact</span><strong><a href="mailto:press@willaitakemyjob.co.uk">press@willaitakemyjob.co.uk</a></strong></div>
+        <div><span>Main report</span><strong><a href="/uk-ai-job-risk-index-2026/">UK AI Job Risk Index 2026</a></strong></div>
+        <div><span>Dataset</span><strong><a href="/uk-ai-job-risk-index-2026.csv">Download CSV</a></strong></div>
+      </div>
+      <div class="article-body">
+        <section class="quote-box"><h2>Short description</h2><p>Will AI Take My Job? is a UK-focused career guidance site that scores roles by task exposure, not job-title panic. It helps workers see which tasks may change first, what remains human, and what skills make a role safer.</p></section>
+        <section><h2>Key findings</h2>${list([
+          `Highest-scoring roles in the current index: ${highFindings.join(", ")}.`,
+          `Lower-change roles in the current index: ${lowFindings.join(", ")}.`,
+          "High scores do not mean a job disappears; they mean a larger share of the task mix may be accelerated, routed, drafted, summarised, generated, or checked by AI.",
+          "Lower scores usually reflect physical presence, regulated accountability, client or patient trust, skilled manual work, or messy real-world judgement.",
+          "The report includes a downloadable CSV so writers and researchers do not have to scrape a chart image."
+        ])}</section>
+        <section><h2>Useful links</h2><div class="press-link-grid">
+          <a href="/uk-ai-job-risk-index-2026/">UK AI Job Risk Index 2026</a>
+          <a href="/uk-ai-job-risk-index-2026.csv">CSV dataset</a>
+          <a href="/methodology/">Methodology</a>
+          <a href="/jobs-most-at-risk-from-ai/">Jobs most at risk from AI</a>
+          <a href="/jobs-safe-from-ai/">Jobs safe from AI</a>
+          <a href="/best-ai-skills-to-learn/">Best AI skills to learn</a>
+        </div></section>
+        <section><h2>Suggested citation</h2><p>Will AI Take My Job?, <em>UK AI Job Risk Index 2026</em>, ${baseUrl}/uk-ai-job-risk-index-2026/.</p><p>When citing role-level claims, link to the specific role guide as well as the index.</p></section>
+        <section><h2>Download outreach kit</h2><p>These files are mostly for internal use, but they keep the pitch tidy and repeatable.</p><div class="report-actions"><a href="/press-outreach-template.txt">Email template</a><a href="/press-outreach-tracker.csv">Outreach tracker CSV</a></div></section>
+        <section><h2>Notes for writers</h2>${list([
+          "Scores are directional career guidance, not forecasts of redundancies.",
+          "The index is strongest when used to discuss tasks, not to declare a whole occupation doomed.",
+          "Custom cuts by role group, category, or angle can be prepared on request.",
+          "Commercial recommendations and risk scores are kept separate."
+        ])}</section>
+      </div>
+    </main>`
+  });
+}
+
 function riskTable(rows) {
   return `<div class="table-wrap"><table class="risk-index-table"><thead><tr><th>Rank</th><th>Role</th><th>Score</th><th>Change label</th><th>Likely first tasks</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
@@ -771,6 +840,7 @@ function sitemap() {
     "",
     "jobs/",
     "uk-ai-job-risk-index-2026/",
+    "press/",
     "methodology/",
     "about/",
     "editorial-policy/",
@@ -813,6 +883,7 @@ Use this file as the compact AI-readable guide to the site. The canonical human 
 
 ${markdownLink("Homepage and job risk checker", `${baseUrl}/`, "Search a job title and get a practical AI change score.")}
 ${markdownLink("UK AI Job Risk Index 2026", `${baseUrl}/uk-ai-job-risk-index-2026/`, "Citation-ready ranked index and CSV dataset.")}
+${markdownLink("Press and citation kit", `${baseUrl}/press/`, "Press contact, suggested citation, and downloadable outreach kit.")}
 ${markdownLink("All jobs", `${baseUrl}/jobs/`, `Browse all ${roles.length} role guides.`)}
 ${markdownLink("Methodology", `${baseUrl}/methodology/`, "How the scoring model weighs task exposure, judgement, regulation, relationships, physical presence, and adoption speed.")}
 ${markdownLink("Editorial policy", `${baseUrl}/editorial-policy/`, "Research, review, corrections, and commercial independence standards.")}
@@ -877,6 +948,7 @@ Will AI Take My Job? helps UK workers, students, career changers, recruiters, an
 
 ${markdownLink("Homepage and checker", `${baseUrl}/`)}
 ${markdownLink("UK AI Job Risk Index 2026", `${baseUrl}/uk-ai-job-risk-index-2026/`)}
+${markdownLink("Press and citation kit", `${baseUrl}/press/`)}
 ${markdownLink("All job guides", `${baseUrl}/jobs/`)}
 ${markdownLink("Jobs safe from AI", `${baseUrl}/jobs-safe-from-ai/`)}
 ${markdownLink("Jobs most at risk from AI", `${baseUrl}/jobs-most-at-risk-from-ai/`)}
@@ -1063,6 +1135,35 @@ function riskIndexCsv() {
   return [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\n") + "\n";
 }
 
+function pressOutreachTemplate() {
+  return `Subject: UK AI Job Risk Index 2026: ranked roles and CSV
+
+Hi [Name],
+
+I am James from Will AI Take My Job? We have published the UK AI Job Risk Index 2026, a ranked guide to how ${roles.length} career paths may be affected by AI, with a downloadable CSV.
+
+A few useful findings:
+- Highest current scores: customer service agent, administrative assistant, copywriter.
+- Lower-change roles include electrician, plumber, mechanic.
+- The index scores task exposure, not whether a whole job will disappear.
+
+Report: ${baseUrl}/uk-ai-job-risk-index-2026/
+CSV: ${baseUrl}/uk-ai-job-risk-index-2026.csv
+Press kit: ${baseUrl}/press/
+
+Happy to provide a quote or a custom cut by role/category.
+
+James
+Will AI Take My Job?
+press@willaitakemyjob.co.uk
+`;
+}
+
+function pressOutreachTrackerCsv() {
+  const header = ["outlet", "contact_name", "email", "angle", "url", "status", "last_contacted", "follow_up_date", "notes"];
+  return header.map(csvCell).join(",") + "\n";
+}
+
 function csvCell(value) {
   return `"${String(value).replace(/"/g, '""')}"`;
 }
@@ -1076,6 +1177,8 @@ write(".nojekyll", "");
 write("llms.txt", llmsTxt());
 write("llms-full.txt", llmsFullTxt());
 write("uk-ai-job-risk-index-2026.csv", riskIndexCsv());
+write("press-outreach-template.txt", pressOutreachTemplate());
+write("press-outreach-tracker.csv", pressOutreachTrackerCsv());
 write("hero-workspace.svg", heroWorkspaceSvg());
 write("task-mix-dashboard.svg", taskMixDashboardSvg());
 write("favicon.svg", faviconSvg());
@@ -1090,6 +1193,7 @@ write("404.html", pageShell({
 }));
 writePage("jobs", renderJobsIndex());
 writePage("uk-ai-job-risk-index-2026", renderRiskIndex());
+writePage("press", renderPressPage());
 writePage("methodology", renderMethodology());
 writePage("about", renderStaticPage("about", "About Will AI Take My Job", "Will AI Take My Job is a practical career resource for workers who want clear, sourced guidance on how AI may change their role.", `<main id="main" class="article-page"><p class="eyebrow">About</p><h1>AI career advice without the panic theatre.</h1><p class="lead">Will AI Take My Job? helps workers understand which parts of their role are exposed to AI, which parts remain human, and what to do next.</p><div class="article-body"><section><h2>What we believe</h2>${list(["AI changes tasks before it changes whole careers.", "A job title is less useful than a task mix.", "Fear is a poor career strategy, but so is denial.", "The safest workers combine AI fluency with judgement, trust, and domain expertise.", "Good guidance should tell people what to do next, not just scare them."])}</section><section><h2>How the site is built</h2><p>Each guide combines a structured risk model with published labour market research, task-level AI exposure thinking, and practical career advice. The goal is to be useful enough for a worker to make a better decision this week.</p></section><section><h2>Who it is for</h2><p>The site is written for UK workers, students, career changers, managers, recruiters, and anyone trying to separate real AI risk from vague headlines.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 writePage("editorial-policy", renderStaticPage("editorial-policy", "Editorial Policy", "How Will AI Take My Job researches, writes, reviews, and updates AI career guidance.", `<main id="main" class="article-page"><p class="eyebrow">Editorial policy</p><h1>How we keep the guidance useful.</h1><p class="lead">The site is designed to be practical, sourced, and honest about uncertainty.</p><div class="article-body"><section><h2>Research standards</h2>${list(["We prioritise official, primary, or reputable sources for labour market context.", "We separate task exposure from total job replacement.", "We do not present a score as a prediction of redundancy.", "We update the model when better evidence becomes available.", "We avoid advice that depends on panic, miracle tools, or guaranteed outcomes."])}</section><section><h2>Review process</h2><p>Pages are reviewed for clarity, internal consistency, source quality, and whether the recommended actions match the risk profile of the role. The last reviewed date appears on role and methodology pages.</p></section><section><h2>Corrections</h2><p>If a score, source, or recommendation looks wrong, email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>. Corrections should include the page URL and the evidence you think should be considered.</p></section><section><h2>Commercial independence</h2><p>Future sponsorships or affiliate links should be disclosed where they appear. Commercial relationships should not decide a role's risk score.</p></section></div></main>`));

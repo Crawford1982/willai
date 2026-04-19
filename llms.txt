@@ -8,6 +8,7 @@ Use this file as the compact AI-readable guide to the site. The canonical human 
 
 - [Homepage and job risk checker](https://willaitakemyjob.co.uk/): Search a job title and get a practical AI change score.
 - [UK AI Job Risk Index 2026](https://willaitakemyjob.co.uk/uk-ai-job-risk-index-2026/): Citation-ready ranked index and CSV dataset.
+- [Press and citation kit](https://willaitakemyjob.co.uk/press/): Press contact, suggested citation, and downloadable outreach kit.
 - [All jobs](https://willaitakemyjob.co.uk/jobs/): Browse all 30 role guides.
 - [Methodology](https://willaitakemyjob.co.uk/methodology/): How the scoring model weighs task exposure, judgement, regulation, relationships, physical presence, and adoption speed.
 - [Editorial policy](https://willaitakemyjob.co.uk/editorial-policy/): Research, review, corrections, and commercial independence standards.
