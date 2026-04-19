@@ -1,0 +1,823 @@
+# Will AI Take My Job? Full LLM Context
+
+> Expanded context for AI assistants, answer engines, and agents that need a compact understanding of Will AI Take My Job? and its role-level guidance.
+
+Canonical site: https://willaitakemyjob.co.uk/
+Sitemap: https://willaitakemyjob.co.uk/sitemap.xml
+Compact LLM guide: https://willaitakemyjob.co.uk/llms.txt
+Last generated: 2026-04-19
+
+## Site Purpose
+
+Will AI Take My Job? helps UK workers, students, career changers, recruiters, and managers understand how AI may affect work. The site scores roles by task exposure and gives practical next moves. A score is not a prediction that a job will disappear. It is a directional estimate of how much the role's task mix may change.
+
+## How To Interpret Scores
+
+- 70-100: High change. Repeatable, text-heavy, rules-based, or easily checked output is more exposed.
+- 45-69: Medium change. Some tasks are exposed, while judgement, context, trust, or accountability remain important.
+- 0-44: Lower change. The role depends more on physical presence, care, regulated responsibility, relationships, or messy real-world judgement.
+
+## Important Pages
+
+- [Homepage and checker](https://willaitakemyjob.co.uk/)
+- [All job guides](https://willaitakemyjob.co.uk/jobs/)
+- [Jobs safe from AI](https://willaitakemyjob.co.uk/jobs-safe-from-ai/)
+- [Jobs most at risk from AI](https://willaitakemyjob.co.uk/jobs-most-at-risk-from-ai/)
+- [Best AI skills to learn](https://willaitakemyjob.co.uk/best-ai-skills-to-learn/)
+- [Methodology](https://willaitakemyjob.co.uk/methodology/)
+- [Editorial policy](https://willaitakemyjob.co.uk/editorial-policy/)
+
+## Software developer jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-software-developer-jobs/
+Category: Technology
+AI change score: 44/100 (Lower change)
+Summary: The role changes quickly, but developers who understand products, systems, security, users, and deployment still have leverage.
+Verdict: AI will probably change parts of software developer work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Boilerplate code
+- Unit test drafts
+- Documentation
+- Small refactors
+- Code search
+Moves that make the role safer:
+- Own architecture
+- Use AI for delivery
+- Learn security
+- Talk to users
+- Ship measurable outcomes
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Accounting Jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-accounting-jobs/
+Category: Finance
+AI change score: 58/100 (Medium change)
+Summary: Routine bookkeeping and reporting are exposed. Advisory work, tax judgement, audit quality, and client trust are harder to automate.
+Verdict: AI will probably change parts of accountant work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Invoice matching
+- Data entry
+- Variance notes
+- Basic reports
+- Reconciliation checks
+Moves that make the role safer:
+- Move into advisory
+- Use AI reconciliations
+- Specialise in tax
+- Improve client communication
+- Own controls
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Teacher jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-teacher-jobs/
+Category: Education
+AI change score: 28/100 (Lower change)
+Summary: AI will help with planning, feedback, tutoring, and admin, but classrooms still need care, authority, safeguarding, and judgement.
+Verdict: AI is more likely to support teacher work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Lesson drafts
+- Quiz generation
+- Feedback templates
+- Admin summaries
+- Resource adaptation
+Moves that make the role safer:
+- Teach AI literacy
+- Strengthen pastoral skills
+- Use AI for planning
+- Focus on assessment
+- Lead curriculum change
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Graphic Design Jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-graphic-design-jobs/
+Category: Creative
+AI change score: 67/100 (Medium change)
+Summary: Basic asset production is under pressure. Brand strategy, taste, art direction, client handling, and campaign thinking matter more.
+Verdict: AI is unlikely to remove every graphic designer job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- Concept drafts
+- Social variants
+- Background removal
+- Simple layouts
+- Image generation
+Moves that make the role safer:
+- Sell brand systems
+- Learn AI image workflows
+- Move into art direction
+- Build campaign case studies
+- Package retainers
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Copywriter jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-copywriter-jobs/
+Category: Creative
+AI change score: 72/100 (High change)
+Summary: Generic copy is heavily exposed. Research, positioning, voice, conversion strategy, and accountability still create value.
+Verdict: AI is unlikely to remove every copywriter job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- First drafts
+- Email variants
+- SEO outlines
+- Ad copy tests
+- Product descriptions
+Moves that make the role safer:
+- Own customer research
+- Learn analytics
+- Specialise by industry
+- Build outcome-led proof
+- Become an editor-strategist
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Customer service agent jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-customer-service-agent-jobs/
+Category: Operations
+AI change score: 76/100 (High change)
+Summary: Tier-one support is a prime automation target. Complex complaints, empathy, retention, and escalation work are safer.
+Verdict: AI is unlikely to remove every customer service agent job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- FAQ answers
+- Ticket routing
+- Chat responses
+- Call summaries
+- Knowledge-base suggestions
+Moves that make the role safer:
+- Move into escalation
+- Learn support operations
+- Own help content
+- Build retention skills
+- Handle sensitive cases
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Data analyst jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-data-analyst-jobs/
+Category: Data
+AI change score: 55/100 (Medium change)
+Summary: Basic dashboards and SQL are easier to generate. Business context, data quality, experiment design, and storytelling keep value high.
+Verdict: AI will probably change parts of data analyst work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- SQL drafts
+- Chart suggestions
+- Dashboard notes
+- Anomaly summaries
+- Cleaning scripts
+Moves that make the role safer:
+- Own metric definitions
+- Learn causal thinking
+- Improve data engineering
+- Tell business stories
+- Partner with decision makers
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Project manager jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-project-manager-jobs/
+Category: Operations
+AI change score: 45/100 (Medium change)
+Summary: Status reporting gets automated. The safer value is unblocking people, handling trade-offs, and making decisions stick.
+Verdict: AI will probably change parts of project manager work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Status reports
+- Meeting notes
+- Risk logs
+- Timeline drafts
+- Dependency summaries
+Moves that make the role safer:
+- Own stakeholder trust
+- Use AI for admin
+- Get technical context
+- Improve decision discipline
+- Resolve conflict
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Marketing manager jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-marketing-manager-jobs/
+Category: Marketing
+AI change score: 52/100 (Medium change)
+Summary: Content production accelerates. Brand judgement, distribution, experiments, and commercial accountability become more important.
+Verdict: AI will probably change parts of marketing manager work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Campaign drafts
+- Content calendars
+- Audience research
+- Performance summaries
+- Ad variations
+Moves that make the role safer:
+- Own growth metrics
+- Learn automation stacks
+- Build channel expertise
+- Run better experiments
+- Connect brand to revenue
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Solicitor jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-solicitor-jobs/
+Category: Legal
+AI change score: 39/100 (Lower change)
+Summary: Document review and drafting will speed up. Legal responsibility, negotiation, strategy, and regulated judgement remain human-led.
+Verdict: AI is more likely to support solicitor work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Contract summaries
+- Case research
+- Clause comparison
+- Draft letters
+- Disclosure review
+Moves that make the role safer:
+- Use AI review tools
+- Specialise deeply
+- Improve client advisory
+- Stay close to compliance
+- Own risk decisions
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Paralegal jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-paralegal-jobs/
+Category: Legal
+AI change score: 63/100 (Medium change)
+Summary: Research, document prep, and review workflows are exposed. Matter management, evidence handling, client care, and legal process knowledge still matter.
+Verdict: AI will probably change parts of paralegal work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Document review
+- Legal research
+- Bundle preparation
+- Chronologies
+- Template letters
+Moves that make the role safer:
+- Master legal tech
+- Move into complex matters
+- Improve evidence handling
+- Build client skills
+- Learn compliance workflows
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Nurse jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-nurse-jobs/
+Category: Healthcare
+AI change score: 18/100 (Lower change)
+Summary: AI can help with notes, triage, and scheduling, but hands-on care, accountability, and patient trust are resilient.
+Verdict: AI is more likely to support nurse work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Shift notes
+- Triage prompts
+- Care plan drafts
+- Scheduling admin
+- Patient education drafts
+Moves that make the role safer:
+- Learn digital health tools
+- Develop specialist practice
+- Strengthen patient education
+- Lead workflow improvement
+- Mentor others
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Doctor jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-doctor-jobs/
+Category: Healthcare
+AI change score: 24/100 (Lower change)
+Summary: AI will support diagnosis, documentation, and triage, but clinical accountability, bedside judgement, and patient trust remain central.
+Verdict: AI is more likely to support doctor work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Clinical notes
+- Differential prompts
+- Referral letters
+- Literature summaries
+- Admin coding
+Moves that make the role safer:
+- Use AI safely
+- Specialise clinically
+- Improve communication
+- Lead governance
+- Audit AI outputs
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Electrician jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-electrician-jobs/
+Category: Trades
+AI change score: 12/100 (Lower change)
+Summary: Physical skilled work is resilient. AI helps quotes, diagnostics, stock, and paperwork rather than replacing the trade.
+Verdict: AI is more likely to support electrician work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Quote drafts
+- Fault checklists
+- Stock planning
+- Customer messages
+- Invoice notes
+Moves that make the role safer:
+- Offer smart-home installs
+- Use AI for admin
+- Build local SEO
+- Train apprentices
+- Specialise in renewables
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Plumber jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-plumber-jobs/
+Category: Trades
+AI change score: 13/100 (Lower change)
+Summary: Hands-on trade work remains hard to automate. The biggest gains come from better booking, quoting, diagnostics, and customer follow-up.
+Verdict: AI is more likely to support plumber work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Quote drafts
+- Booking messages
+- Fault checklists
+- Invoice descriptions
+- Customer FAQs
+Moves that make the role safer:
+- Build local reputation
+- Use AI for admin
+- Specialise in heat pumps
+- Improve maintenance plans
+- Train junior staff
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## HR manager jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-hr-manager-jobs/
+Category: People
+AI change score: 46/100 (Medium change)
+Summary: HR admin and screening will change. Employee relations, policy judgement, investigations, and trust-heavy conversations stay human-led.
+Verdict: AI will probably change parts of hr manager work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Job descriptions
+- Screening notes
+- Policy drafts
+- Survey summaries
+- Training outlines
+Moves that make the role safer:
+- Lead AI policy
+- Handle complex ER
+- Improve workforce planning
+- Use people analytics
+- Own culture change
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Recruiter jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-recruiter-jobs/
+Category: People
+AI change score: 62/100 (Medium change)
+Summary: Sourcing and screening are exposed. Market knowledge, trust, candidate relationships, and hiring strategy still matter.
+Verdict: AI will probably change parts of recruiter work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Candidate search
+- CV screening
+- Outreach drafts
+- Interview summaries
+- Pipeline reports
+Moves that make the role safer:
+- Build niche networks
+- Advise hiring managers
+- Use AI sourcing well
+- Improve candidate experience
+- Own salary intelligence
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Sales representative jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-sales-representative-jobs/
+Category: Sales
+AI change score: 41/100 (Lower change)
+Summary: Prospecting and CRM admin will automate. Trust, negotiation, discovery, and complex account strategy remain valuable.
+Verdict: AI will probably change parts of sales representative work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Lead research
+- Email sequences
+- Call notes
+- CRM updates
+- Proposal drafts
+Moves that make the role safer:
+- Improve discovery
+- Use AI for prep
+- Build vertical expertise
+- Negotiate better
+- Own accounts
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Financial adviser jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-financial-adviser-jobs/
+Category: Finance
+AI change score: 36/100 (Lower change)
+Summary: AI can assist planning and portfolio analysis, but regulated advice, trust, suitability, and life context keep humans central.
+Verdict: AI is more likely to support financial adviser work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Portfolio summaries
+- Scenario drafts
+- Client notes
+- Research
+- Compliance checklists
+Moves that make the role safer:
+- Build client trust
+- Use planning tools
+- Specialise by client type
+- Improve behavioural coaching
+- Stay compliant
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Administrative assistant jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-admin-assistant-jobs/
+Category: Administration
+AI change score: 74/100 (High change)
+Summary: Calendar, document, and inbox tasks are highly exposed. Safer admin careers move toward coordination, judgement, and trusted operations.
+Verdict: AI is unlikely to remove every administrative assistant job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- Meeting notes
+- Scheduling
+- Document formatting
+- Inbox drafting
+- Travel plans
+Moves that make the role safer:
+- Become an operations coordinator
+- Own sensitive workflows
+- Use automation tools
+- Improve stakeholder handling
+- Manage processes
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Bookkeeper jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-bookkeeper-jobs/
+Category: Finance
+AI change score: 70/100 (High change)
+Summary: Bookkeeping is one of the clearest automation targets. Review, exception handling, client support, and advisory add resilience.
+Verdict: AI is unlikely to remove every bookkeeper job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- Bank feeds
+- Invoice coding
+- Receipt capture
+- Reconciliations
+- Basic reports
+Moves that make the role safer:
+- Own exception review
+- Move into advisory
+- Master accounting software
+- Package monthly support
+- Learn tax basics
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Translator jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-translator-jobs/
+Category: Language
+AI change score: 68/100 (Medium change)
+Summary: General translation is exposed. Specialist terminology, culture, legal or medical context, and editing machine output are safer.
+Verdict: AI is unlikely to remove every translator job, but it can absorb a meaningful share of the repeatable work. The safest path is to move up from production into judgement, review, client context, and ownership.
+Why this score: Many of the core tasks are repeatable, text-heavy, rule-based, or easy to split into software-assisted steps.
+Tasks likely to change first:
+- First-pass translation
+- Glossary suggestions
+- Subtitles
+- Simple localisation
+- Terminology checks
+Moves that make the role safer:
+- Specialise deeply
+- Edit AI output
+- Own transcreation
+- Serve regulated sectors
+- Build quality assurance
+Warning signs:
+- Most of your output starts from a template
+- You are paid mainly for first drafts or simple variations
+- Quality is judged by speed more than judgement
+- Your work can be checked cheaply by someone else
+
+## Journalist jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-journalist-jobs/
+Category: Media
+AI change score: 57/100 (Medium change)
+Summary: Commodity summaries and rewrites are exposed. Original reporting, sources, investigation, editorial judgement, and trust still matter.
+Verdict: AI will probably change parts of journalist work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- News briefs
+- Transcript summaries
+- Headline variants
+- Background research
+- Social snippets
+Moves that make the role safer:
+- Build sources
+- Do original reporting
+- Use AI for research
+- Own a beat
+- Create audience trust
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Architect jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-architect-jobs/
+Category: Built Environment
+AI change score: 34/100 (Lower change)
+Summary: AI will speed up concepts, compliance checks, and visualisation. Client judgement, constraints, accountability, and coordination stay valuable.
+Verdict: AI is more likely to support architect work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Concept options
+- Visualisations
+- Code checks
+- Material research
+- Meeting notes
+Moves that make the role safer:
+- Lead client strategy
+- Master BIM plus AI
+- Own planning context
+- Improve sustainability expertise
+- Coordinate teams
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Mechanic jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-mechanic-jobs/
+Category: Trades
+AI change score: 17/100 (Lower change)
+Summary: Physical diagnostics and repair are resilient. AI helps fault-finding, parts lookup, service notes, and customer communication.
+Verdict: AI is more likely to support mechanic work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Fault suggestions
+- Service write-ups
+- Parts lookup
+- Customer messages
+- Maintenance reminders
+Moves that make the role safer:
+- Specialise in EVs
+- Use diagnostic tools
+- Build trust locally
+- Offer maintenance plans
+- Train on software systems
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Chef jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-chef-jobs/
+Category: Hospitality
+AI change score: 22/100 (Lower change)
+Summary: AI can help menus, costing, and stock, but cooking, leadership, consistency, and customer experience remain human.
+Verdict: AI is more likely to support chef work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Menu ideas
+- Costing
+- Stock plans
+- Supplier comparison
+- Allergen notes
+Moves that make the role safer:
+- Own kitchen leadership
+- Use AI for margins
+- Build a signature style
+- Improve operations
+- Create content
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Retail assistant jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-retail-assistant-jobs/
+Category: Retail
+AI change score: 61/100 (Medium change)
+Summary: Checkout and simple product queries are exposed. Advice, service, merchandising, and local customer relationships are safer.
+Verdict: AI will probably change parts of retail assistant work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Stock answers
+- Checkout automation
+- Product FAQs
+- Shift notes
+- Inventory prompts
+Moves that make the role safer:
+- Move into specialist sales
+- Improve product expertise
+- Use clienteling tools
+- Own merchandising
+- Develop supervisor skills
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Warehouse operative jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-warehouse-operative-jobs/
+Category: Logistics
+AI change score: 49/100 (Medium change)
+Summary: Robotics and optimisation will change warehouses unevenly. Roles involving equipment, exceptions, safety, and supervision are safer.
+Verdict: AI will probably change parts of warehouse operative work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Picking routes
+- Stock counts
+- Shift planning
+- Exception flags
+- Inventory reports
+Moves that make the role safer:
+- Learn automation systems
+- Move into supervision
+- Own safety
+- Operate specialist equipment
+- Improve process knowledge
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## UX designer jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-ux-designer-jobs/
+Category: Technology
+AI change score: 51/100 (Medium change)
+Summary: Wireframes and research summaries will get faster. Product thinking, facilitation, accessibility, and user judgement keep value high.
+Verdict: AI will probably change parts of ux designer work before it replaces the whole role. The advantage goes to people who can combine AI speed with context, quality control, and trusted decisions.
+Why this score: The role contains a mixed task profile: some work is easy to automate, while judgement, context, and stakeholder trust still matter.
+Tasks likely to change first:
+- Wireframe drafts
+- Persona drafts
+- Research summaries
+- Prototype copy
+- Usability notes
+Moves that make the role safer:
+- Own discovery
+- Facilitate decisions
+- Learn accessibility
+- Use AI prototyping
+- Measure outcomes
+Warning signs:
+- Your week is dominated by status updates, summaries, simple analysis, or handoffs
+- You rarely speak to customers or decision makers
+- You do not own the final judgement
+- Your tools are improving faster than your responsibilities
+
+## Cybersecurity analyst jobs
+
+URL: https://willaitakemyjob.co.uk/will-ai-take-cybersecurity-analyst-jobs/
+Category: Technology
+AI change score: 32/100 (Lower change)
+Summary: AI will automate triage and reporting, but threats also grow. Human judgement, incident response, and security ownership stay valuable.
+Verdict: AI is more likely to support cybersecurity analyst work than replace it outright. The role has protective features such as physical delivery, accountability, care, trust, or complex real-world judgement.
+Why this score: The role depends heavily on physical presence, regulated accountability, care, relationship work, or complex real-world judgement.
+Tasks likely to change first:
+- Alert triage
+- Report drafts
+- Log summaries
+- Phishing analysis
+- Playbook suggestions
+Moves that make the role safer:
+- Learn AI security
+- Improve incident response
+- Own risk communication
+- Automate detection
+- Stay hands-on
+Warning signs:
+- Your employer treats AI as a paperwork tool only
+- You avoid learning the tools younger colleagues already use
+- Admin work keeps growing around the real job
+- You cannot show how your judgement improves outcomes
+
+## Research Sources
+
+- [World Economic Forum Future of Jobs 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/)
+- [UK Government: impact of AI on UK jobs and training](https://www.gov.uk/government/publications/the-impact-of-ai-on-uk-jobs-and-training)
+- [UK Government: assessment of AI capabilities and the labour market](https://www.gov.uk/government/publications/assessment-of-ai-capabilities-and-the-impact-on-the-uk-labour-market/assessment-of-ai-capabilities-and-the-impact-on-the-uk-labour-market)
+- [UK Government: AI skills labour market projections](https://www.gov.uk/government/publications/ai-skills-for-life-and-work-labour-market-and-skills-projections/ai-skills-for-life-and-work-labour-market-and-skills-projections)
+- [Anthropic Economic Index](https://www.anthropic.com/economic-index)
+- [Anthropic Economic Index: economic primitives](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report)
+- [Office for National Statistics automation analysis](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/whichoccupationsareathighestriskofbeingautomated/2019-03-25)
+- [OECD human-centred AI adoption in the world of work](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/12/compendium-of-best-practices-for-the-human-centered-adoption-of-safe-secure-and-trustworthy-ai-in-the-world-of-work_90541127/INMX2843.pdf)
+
+## Citation Guidance
+
+When citing this site, prefer the specific role guide URL for job-specific claims and the methodology URL for scoring-model claims. Mention that scores are directional and should be combined with current labour market evidence, employer context, and personal career judgement.

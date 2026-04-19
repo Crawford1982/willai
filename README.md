@@ -11,7 +11,9 @@ Static SEO site for `willaitakemyjob.co.uk`, ready for GitHub Pages.
 - Role guide FAQ schema, Article schema, Organization schema, review notes, source lists, and correction policy
 - Newsletter waitlist placeholder
 - Sponsor placement placeholder
-- SEO title, description, canonical URL, Open Graph, FAQ schema, robots.txt, and sitemap.xml
+- SEO title, description, canonical URL, Open Graph, Twitter card metadata, FAQ schema, robots.txt, sitemap.xml, favicon, and web app manifest
+- Google Analytics 4 tag (`G-X098VPWYNT`) installed across generated pages
+- AI-readable `llms.txt` and expanded `llms-full.txt` files for agents that support the emerging convention
 
 ## GitHub Pages launch path
 
@@ -21,8 +23,9 @@ Static SEO site for `willaitakemyjob.co.uk`, ready for GitHub Pages.
 4. Keep the included `CNAME` file for `willaitakemyjob.co.uk`.
 5. Point your domain DNS at GitHub Pages.
 6. Submit `https://willaitakemyjob.co.uk/sitemap.xml` in Google Search Console.
-7. Replace the newsletter placeholder in `script.js` with Beehiiv, ConvertKit, Buttondown, or Mailchimp.
-8. Replace sponsor emails once the domain mailbox exists.
+7. Confirm Google Analytics 4 is receiving traffic for `G-X098VPWYNT`.
+8. Replace the newsletter placeholder in `script.js` with Beehiiv, ConvertKit, Buttondown, or Mailchimp.
+9. Replace sponsor emails once the domain mailbox exists.
 
 ## Rebuilding pages
 
@@ -32,7 +35,7 @@ The site is generated from `tools/build-site.js`.
 node tools/build-site.js
 ```
 
-Run this after adding new roles or changing templates. It rebuilds `index.html`, role pages, cluster pages, `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`, and `404.html`.
+Run this after adding new roles or changing templates. It rebuilds `index.html`, role pages, cluster pages, `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`, `llms.txt`, `llms-full.txt`, favicon/social assets, the web manifest, and `404.html`.
 
 ## First monetisation options
 
@@ -53,8 +56,9 @@ Add more dedicated pages for high-volume queries such as:
 
 ## Immediate post-launch checklist
 
-- Add Google Search Console and Bing Webmaster Tools.
-- Add privacy-friendly analytics such as Plausible, Fathom, or Cloudflare Web Analytics.
+- Check Google Search Console and Bing Webmaster Tools after deployment.
+- Confirm GA4 events in Realtime after deployment.
+- Check `/llms.txt` and `/llms-full.txt` after deployment.
 - Create a real email list provider form.
 - Start a backlinkable report page: "UK AI Job Risk Index 2026".
 - Replace the placeholder contact emails with working mailboxes.

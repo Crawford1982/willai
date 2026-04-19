@@ -1,0 +1,58 @@
+# Will AI Take My Job?
+
+> Will AI Take My Job? is a UK-focused AI job risk checker and career guidance site. It explains how AI may change specific roles, which tasks are exposed first, and what workers can do next.
+
+Use this file as the compact AI-readable guide to the site. The canonical human site is https://willaitakemyjob.co.uk/. The full machine-readable context file is https://willaitakemyjob.co.uk/llms-full.txt. Scores are directional career guidance, not legal, financial, or employment advice.
+
+## Core Pages
+
+- [Homepage and job risk checker](https://willaitakemyjob.co.uk/): Search a job title and get a practical AI change score.
+- [All jobs](https://willaitakemyjob.co.uk/jobs/): Browse all 30 role guides.
+- [Methodology](https://willaitakemyjob.co.uk/methodology/): How the scoring model weighs task exposure, judgement, regulation, relationships, physical presence, and adoption speed.
+- [Editorial policy](https://willaitakemyjob.co.uk/editorial-policy/): Research, review, corrections, and commercial independence standards.
+- [About](https://willaitakemyjob.co.uk/about/): Who the site is for and how to interpret the guidance.
+- [Privacy policy](https://willaitakemyjob.co.uk/privacy/): Analytics and data collection information.
+
+## Topic Hubs
+
+- [Jobs safe from AI](https://willaitakemyjob.co.uk/jobs-safe-from-ai/): The jobs most resilient to AI tend to mix hands-on work, trust, judgement, regulation, care, leadership, and local accountability.
+- [Jobs most at risk from AI](https://willaitakemyjob.co.uk/jobs-most-at-risk-from-ai/): Roles built around repeatable text, admin, support, and content production face faster AI disruption. See the job types to watch.
+- [Best AI skills to learn](https://willaitakemyjob.co.uk/best-ai-skills-to-learn/): Practical AI skills for workers who want to stay useful: prompting, checking, automation, data judgement, workflow design, and domain expertise.
+
+## Role Guides
+
+- [Software developer jobs](https://willaitakemyjob.co.uk/will-ai-take-software-developer-jobs/): Lower change (44/100). The role changes quickly, but developers who understand products, systems, security, users, and deployment still have leverage.
+- [Accounting Jobs](https://willaitakemyjob.co.uk/will-ai-take-accounting-jobs/): Medium change (58/100). Routine bookkeeping and reporting are exposed. Advisory work, tax judgement, audit quality, and client trust are harder to automate.
+- [Teacher jobs](https://willaitakemyjob.co.uk/will-ai-take-teacher-jobs/): Lower change (28/100). AI will help with planning, feedback, tutoring, and admin, but classrooms still need care, authority, safeguarding, and judgement.
+- [Graphic Design Jobs](https://willaitakemyjob.co.uk/will-ai-take-graphic-design-jobs/): Medium change (67/100). Basic asset production is under pressure. Brand strategy, taste, art direction, client handling, and campaign thinking matter more.
+- [Copywriter jobs](https://willaitakemyjob.co.uk/will-ai-take-copywriter-jobs/): High change (72/100). Generic copy is heavily exposed. Research, positioning, voice, conversion strategy, and accountability still create value.
+- [Customer service agent jobs](https://willaitakemyjob.co.uk/will-ai-take-customer-service-agent-jobs/): High change (76/100). Tier-one support is a prime automation target. Complex complaints, empathy, retention, and escalation work are safer.
+- [Data analyst jobs](https://willaitakemyjob.co.uk/will-ai-take-data-analyst-jobs/): Medium change (55/100). Basic dashboards and SQL are easier to generate. Business context, data quality, experiment design, and storytelling keep value high.
+- [Project manager jobs](https://willaitakemyjob.co.uk/will-ai-take-project-manager-jobs/): Medium change (45/100). Status reporting gets automated. The safer value is unblocking people, handling trade-offs, and making decisions stick.
+- [Marketing manager jobs](https://willaitakemyjob.co.uk/will-ai-take-marketing-manager-jobs/): Medium change (52/100). Content production accelerates. Brand judgement, distribution, experiments, and commercial accountability become more important.
+- [Solicitor jobs](https://willaitakemyjob.co.uk/will-ai-take-solicitor-jobs/): Lower change (39/100). Document review and drafting will speed up. Legal responsibility, negotiation, strategy, and regulated judgement remain human-led.
+- [Paralegal jobs](https://willaitakemyjob.co.uk/will-ai-take-paralegal-jobs/): Medium change (63/100). Research, document prep, and review workflows are exposed. Matter management, evidence handling, client care, and legal process knowledge still matter.
+- [Nurse jobs](https://willaitakemyjob.co.uk/will-ai-take-nurse-jobs/): Lower change (18/100). AI can help with notes, triage, and scheduling, but hands-on care, accountability, and patient trust are resilient.
+- [Doctor jobs](https://willaitakemyjob.co.uk/will-ai-take-doctor-jobs/): Lower change (24/100). AI will support diagnosis, documentation, and triage, but clinical accountability, bedside judgement, and patient trust remain central.
+- [Electrician jobs](https://willaitakemyjob.co.uk/will-ai-take-electrician-jobs/): Lower change (12/100). Physical skilled work is resilient. AI helps quotes, diagnostics, stock, and paperwork rather than replacing the trade.
+- [Plumber jobs](https://willaitakemyjob.co.uk/will-ai-take-plumber-jobs/): Lower change (13/100). Hands-on trade work remains hard to automate. The biggest gains come from better booking, quoting, diagnostics, and customer follow-up.
+- [HR manager jobs](https://willaitakemyjob.co.uk/will-ai-take-hr-manager-jobs/): Medium change (46/100). HR admin and screening will change. Employee relations, policy judgement, investigations, and trust-heavy conversations stay human-led.
+- [Recruiter jobs](https://willaitakemyjob.co.uk/will-ai-take-recruiter-jobs/): Medium change (62/100). Sourcing and screening are exposed. Market knowledge, trust, candidate relationships, and hiring strategy still matter.
+- [Sales representative jobs](https://willaitakemyjob.co.uk/will-ai-take-sales-representative-jobs/): Lower change (41/100). Prospecting and CRM admin will automate. Trust, negotiation, discovery, and complex account strategy remain valuable.
+- [Financial adviser jobs](https://willaitakemyjob.co.uk/will-ai-take-financial-adviser-jobs/): Lower change (36/100). AI can assist planning and portfolio analysis, but regulated advice, trust, suitability, and life context keep humans central.
+- [Administrative assistant jobs](https://willaitakemyjob.co.uk/will-ai-take-admin-assistant-jobs/): High change (74/100). Calendar, document, and inbox tasks are highly exposed. Safer admin careers move toward coordination, judgement, and trusted operations.
+- [Bookkeeper jobs](https://willaitakemyjob.co.uk/will-ai-take-bookkeeper-jobs/): High change (70/100). Bookkeeping is one of the clearest automation targets. Review, exception handling, client support, and advisory add resilience.
+- [Translator jobs](https://willaitakemyjob.co.uk/will-ai-take-translator-jobs/): Medium change (68/100). General translation is exposed. Specialist terminology, culture, legal or medical context, and editing machine output are safer.
+- [Journalist jobs](https://willaitakemyjob.co.uk/will-ai-take-journalist-jobs/): Medium change (57/100). Commodity summaries and rewrites are exposed. Original reporting, sources, investigation, editorial judgement, and trust still matter.
+- [Architect jobs](https://willaitakemyjob.co.uk/will-ai-take-architect-jobs/): Lower change (34/100). AI will speed up concepts, compliance checks, and visualisation. Client judgement, constraints, accountability, and coordination stay valuable.
+- [Mechanic jobs](https://willaitakemyjob.co.uk/will-ai-take-mechanic-jobs/): Lower change (17/100). Physical diagnostics and repair are resilient. AI helps fault-finding, parts lookup, service notes, and customer communication.
+- [Chef jobs](https://willaitakemyjob.co.uk/will-ai-take-chef-jobs/): Lower change (22/100). AI can help menus, costing, and stock, but cooking, leadership, consistency, and customer experience remain human.
+- [Retail assistant jobs](https://willaitakemyjob.co.uk/will-ai-take-retail-assistant-jobs/): Medium change (61/100). Checkout and simple product queries are exposed. Advice, service, merchandising, and local customer relationships are safer.
+- [Warehouse operative jobs](https://willaitakemyjob.co.uk/will-ai-take-warehouse-operative-jobs/): Medium change (49/100). Robotics and optimisation will change warehouses unevenly. Roles involving equipment, exceptions, safety, and supervision are safer.
+- [UX designer jobs](https://willaitakemyjob.co.uk/will-ai-take-ux-designer-jobs/): Medium change (51/100). Wireframes and research summaries will get faster. Product thinking, facilitation, accessibility, and user judgement keep value high.
+- [Cybersecurity analyst jobs](https://willaitakemyjob.co.uk/will-ai-take-cybersecurity-analyst-jobs/): Lower change (32/100). AI will automate triage and reporting, but threats also grow. Human judgement, incident response, and security ownership stay valuable.
+
+## Structured Data
+
+- [Sitemap](https://willaitakemyjob.co.uk/sitemap.xml): XML sitemap for indexable pages.
+- [Full LLM context](https://willaitakemyjob.co.uk/llms-full.txt): Expanded plain-text context for AI assistants and agents.

@@ -4,6 +4,17 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const baseUrl = "https://willaitakemyjob.co.uk";
 const today = new Date().toISOString().slice(0, 10);
+const googleAnalyticsId = "G-X098VPWYNT";
+const ogImage = `${baseUrl}/social-card.svg`;
+const googleTag = `<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '${googleAnalyticsId}');
+    </script>`;
 
 const sources = [
   ["World Economic Forum Future of Jobs 2025", "https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/"],
@@ -160,17 +171,28 @@ function pageShell({ title, description, canonical, body, schema = "" }) {
   return `<!doctype html>
 <html lang="en-GB">
   <head>
+    ${googleTag}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(description)}">
     <meta name="theme-color" content="#f7f3ea">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="${esc(title)}">
     <meta property="og:description" content="${esc(description)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${canonical}">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1758594714142-2c1cf371ee7d?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="${ogImage}">
+    <meta property="og:site_name" content="Will AI Take My Job?">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${esc(title)}">
+    <meta name="twitter:description" content="${esc(description)}">
+    <meta name="twitter:image" content="${ogImage}">
     <link rel="canonical" href="${canonical}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="alternate" type="text/plain" title="LLM site guide" href="/llms.txt">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/styles.css">
     ${organizationSchema}
     ${schema}
@@ -347,7 +369,7 @@ function jobCard(r) {
 function renderRolePage(r) {
   const related = roles.filter((item) => item.category === r.category && item.slug !== r.slug).slice(0, 4);
   const queryTitle = r.searchTitle || r.title.toLowerCase();
-  const headlineTitle = r.pageTitle || `${r.title} jobs`;
+  const headlineTitle = r.pageTitle || `${r.title} Jobs`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -553,6 +575,12 @@ function write(file, content) {
   fs.writeFileSync(target, content, "utf8");
 }
 
+function writeBinary(file, content) {
+  const target = path.join(root, file);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, content);
+}
+
 function writePage(slug, html) {
   write(path.join(slug, "index.html"), html);
 }
@@ -576,12 +604,222 @@ ${urls.map((url) => `  <url><loc>${baseUrl}/${url}</loc><lastmod>${today}</lastm
 `;
 }
 
+function markdownLink(title, url, note = "") {
+  return `- [${title}](${url})${note ? `: ${note}` : ""}`;
+}
+
+function llmsTxt() {
+  const roleLinks = roles
+    .map((r) => markdownLink(
+      r.pageTitle || `${r.title} jobs`,
+      `${baseUrl}/${r.guide}`,
+      `${riskLabel(r.risk)} (${r.risk}/100). ${r.outlook}`
+    ))
+    .join("\n");
+  const clusterLinks = clusters
+    .map((c) => markdownLink(c.h1, `${baseUrl}/${c.slug}/`, c.description))
+    .join("\n");
+
+  return `# Will AI Take My Job?
+
+> Will AI Take My Job? is a UK-focused AI job risk checker and career guidance site. It explains how AI may change specific roles, which tasks are exposed first, and what workers can do next.
+
+Use this file as the compact AI-readable guide to the site. The canonical human site is ${baseUrl}/. The full machine-readable context file is ${baseUrl}/llms-full.txt. Scores are directional career guidance, not legal, financial, or employment advice.
+
+## Core Pages
+
+${markdownLink("Homepage and job risk checker", `${baseUrl}/`, "Search a job title and get a practical AI change score.")}
+${markdownLink("All jobs", `${baseUrl}/jobs/`, `Browse all ${roles.length} role guides.`)}
+${markdownLink("Methodology", `${baseUrl}/methodology/`, "How the scoring model weighs task exposure, judgement, regulation, relationships, physical presence, and adoption speed.")}
+${markdownLink("Editorial policy", `${baseUrl}/editorial-policy/`, "Research, review, corrections, and commercial independence standards.")}
+${markdownLink("About", `${baseUrl}/about/`, "Who the site is for and how to interpret the guidance.")}
+${markdownLink("Privacy policy", `${baseUrl}/privacy/`, "Analytics and data collection information.")}
+
+## Topic Hubs
+
+${clusterLinks}
+
+## Role Guides
+
+${roleLinks}
+
+## Structured Data
+
+${markdownLink("Sitemap", `${baseUrl}/sitemap.xml`, "XML sitemap for indexable pages.")}
+${markdownLink("Full LLM context", `${baseUrl}/llms-full.txt`, "Expanded plain-text context for AI assistants and agents.")}
+`;
+}
+
+function llmsFullTxt() {
+  const roleDetails = roles.map((r) => {
+    return `## ${r.pageTitle || `${r.title} jobs`}
+
+URL: ${baseUrl}/${r.guide}
+Category: ${r.category}
+AI change score: ${r.risk}/100 (${riskLabel(r.risk)})
+Summary: ${r.outlook}
+Verdict: ${r.verdict}
+Why this score: ${r.why}
+Tasks likely to change first:
+${r.change.map((item) => `- ${item}`).join("\n")}
+Moves that make the role safer:
+${r.safer.map((item) => `- ${item}`).join("\n")}
+Warning signs:
+${r.warningSigns.map((item) => `- ${item}`).join("\n")}
+`;
+  }).join("\n");
+  const sourceLinks = sources.map(([name, url]) => markdownLink(name, url)).join("\n");
+
+  return `# Will AI Take My Job? Full LLM Context
+
+> Expanded context for AI assistants, answer engines, and agents that need a compact understanding of Will AI Take My Job? and its role-level guidance.
+
+Canonical site: ${baseUrl}/
+Sitemap: ${baseUrl}/sitemap.xml
+Compact LLM guide: ${baseUrl}/llms.txt
+Last generated: ${today}
+
+## Site Purpose
+
+Will AI Take My Job? helps UK workers, students, career changers, recruiters, and managers understand how AI may affect work. The site scores roles by task exposure and gives practical next moves. A score is not a prediction that a job will disappear. It is a directional estimate of how much the role's task mix may change.
+
+## How To Interpret Scores
+
+- 70-100: High change. Repeatable, text-heavy, rules-based, or easily checked output is more exposed.
+- 45-69: Medium change. Some tasks are exposed, while judgement, context, trust, or accountability remain important.
+- 0-44: Lower change. The role depends more on physical presence, care, regulated responsibility, relationships, or messy real-world judgement.
+
+## Important Pages
+
+${markdownLink("Homepage and checker", `${baseUrl}/`)}
+${markdownLink("All job guides", `${baseUrl}/jobs/`)}
+${markdownLink("Jobs safe from AI", `${baseUrl}/jobs-safe-from-ai/`)}
+${markdownLink("Jobs most at risk from AI", `${baseUrl}/jobs-most-at-risk-from-ai/`)}
+${markdownLink("Best AI skills to learn", `${baseUrl}/best-ai-skills-to-learn/`)}
+${markdownLink("Methodology", `${baseUrl}/methodology/`)}
+${markdownLink("Editorial policy", `${baseUrl}/editorial-policy/`)}
+
+${roleDetails}
+## Research Sources
+
+${sourceLinks}
+
+## Citation Guidance
+
+When citing this site, prefer the specific role guide URL for job-specific claims and the methodology URL for scoring-model claims. Mention that scores are directional and should be combined with current labour market evidence, employer context, and personal career judgement.
+`;
+}
+
+function faviconSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#f0b429"/>
+  <path fill="#181713" d="M12 14h8l5.7 25.1L31.9 14h6.7l6.4 25.1L50.7 14H58L48.8 50h-7.2L35.2 25.8 28.8 50h-7.2L12 14Z"/>
+  <path fill="#147d64" d="M10 52h44v6H10z"/>
+</svg>
+`;
+}
+
+function faviconIcoBuffer() {
+  const size = 16;
+  const pixelBytes = size * size * 4;
+  const imageSize = 40 + pixelBytes;
+  const data = Buffer.alloc(6 + 16 + imageSize);
+  data.writeUInt16LE(0, 0);
+  data.writeUInt16LE(1, 2);
+  data.writeUInt16LE(1, 4);
+  data[6] = size;
+  data[7] = size;
+  data[8] = 0;
+  data[9] = 0;
+  data.writeUInt16LE(1, 10);
+  data.writeUInt16LE(32, 12);
+  data.writeUInt32LE(imageSize, 14);
+  data.writeUInt32LE(22, 18);
+  data.writeUInt32LE(40, 22);
+  data.writeInt32LE(size, 26);
+  data.writeInt32LE(size * 2, 30);
+  data.writeUInt16LE(1, 34);
+  data.writeUInt16LE(32, 36);
+  data.writeUInt32LE(0, 38);
+  data.writeUInt32LE(pixelBytes, 42);
+
+  function setPixel(x, y, color) {
+    const bottomUpY = size - 1 - y;
+    const offset = 62 + ((bottomUpY * size + x) * 4);
+    data[offset] = color[2];
+    data[offset + 1] = color[1];
+    data[offset + 2] = color[0];
+    data[offset + 3] = color[3];
+  }
+
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      const border = x === 0 || y === 0 || x === size - 1 || y === size - 1;
+      setPixel(x, y, border ? [24, 23, 19, 255] : [240, 180, 41, 255]);
+    }
+  }
+  for (let y = 4; y <= 12; y += 1) {
+    [3, 4, 11, 12].forEach((x) => setPixel(x, y, [24, 23, 19, 255]));
+    if (y >= 8) {
+      setPixel(y - 3, y, [24, 23, 19, 255]);
+      setPixel(18 - y, y, [24, 23, 19, 255]);
+    }
+  }
+  return data;
+}
+
+function socialCardSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Will AI Take My Job?</title>
+  <desc id="desc">A social sharing card for the Will AI Take My Job website.</desc>
+  <rect width="1200" height="630" fill="#f7f3ea"/>
+  <rect x="70" y="70" width="1060" height="490" rx="34" fill="#fffaf1" stroke="#181713" stroke-width="8"/>
+  <rect x="106" y="106" width="116" height="116" rx="20" fill="#f0b429" stroke="#181713" stroke-width="7"/>
+  <path fill="#181713" d="M124 128h18l12.7 56.5 14-56.5h15l14.3 56.5 12.7-56.5h16.4L206.5 209h-16.2l-14.4-54.5L161.5 209h-16.2L124 128Z"/>
+  <text x="106" y="306" fill="#147d64" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="4">FREE UK AI JOB CHECKER</text>
+  <text x="106" y="396" fill="#181713" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">Will AI take your job?</text>
+  <text x="106" y="470" fill="#655f52" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">Risk scores, exposed tasks, and safer career moves.</text>
+  <circle cx="1026" cy="158" r="48" fill="#d8f3e7" stroke="#181713" stroke-width="6"/>
+  <circle cx="1026" cy="304" r="48" fill="#ffe0db" stroke="#181713" stroke-width="6"/>
+  <circle cx="1026" cy="450" r="48" fill="#f0b429" stroke="#181713" stroke-width="6"/>
+</svg>
+`;
+}
+
+function webManifest() {
+  return `${JSON.stringify({
+    name: "Will AI Take My Job?",
+    short_name: "Will AI",
+    description: "AI job risk scores and practical career guidance for UK workers.",
+    start_url: "/",
+    scope: "/",
+    display: "standalone",
+    background_color: "#f7f3ea",
+    theme_color: "#f7f3ea",
+    icons: [
+      {
+        src: "/favicon.svg",
+        sizes: "any",
+        type: "image/svg+xml",
+        purpose: "any maskable"
+      }
+    ]
+  }, null, 2)}
+`;
+}
+
 write("index.html", renderIndex());
 write("script.js", renderScript());
 write("sitemap.xml", sitemap());
 write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`);
 write("CNAME", "willaitakemyjob.co.uk\n");
 write(".nojekyll", "");
+write("llms.txt", llmsTxt());
+write("llms-full.txt", llmsFullTxt());
+write("favicon.svg", faviconSvg());
+writeBinary("favicon.ico", faviconIcoBuffer());
+write("social-card.svg", socialCardSvg());
+write("site.webmanifest", webManifest());
 write("404.html", pageShell({
   title: "Page Not Found",
   description: "The page was not found. Search your job title or browse the AI job risk library.",
@@ -593,7 +831,7 @@ writePage("methodology", renderMethodology());
 writePage("about", renderStaticPage("about", "About Will AI Take My Job", "Will AI Take My Job is a practical career resource for workers who want clear, sourced guidance on how AI may change their role.", `<main id="main" class="article-page"><p class="eyebrow">About</p><h1>AI career advice without the panic theatre.</h1><p class="lead">Will AI Take My Job? helps workers understand which parts of their role are exposed to AI, which parts remain human, and what to do next.</p><div class="article-body"><section><h2>What we believe</h2>${list(["AI changes tasks before it changes whole careers.", "A job title is less useful than a task mix.", "Fear is a poor career strategy, but so is denial.", "The safest workers combine AI fluency with judgement, trust, and domain expertise.", "Good guidance should tell people what to do next, not just scare them."])}</section><section><h2>How the site is built</h2><p>Each guide combines a structured risk model with published labour market research, task-level AI exposure thinking, and practical career advice. The goal is to be useful enough for a worker to make a better decision this week.</p></section><section><h2>Who it is for</h2><p>The site is written for UK workers, students, career changers, managers, recruiters, and anyone trying to separate real AI risk from vague headlines.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 writePage("editorial-policy", renderStaticPage("editorial-policy", "Editorial Policy", "How Will AI Take My Job researches, writes, reviews, and updates AI career guidance.", `<main id="main" class="article-page"><p class="eyebrow">Editorial policy</p><h1>How we keep the guidance useful.</h1><p class="lead">The site is designed to be practical, sourced, and honest about uncertainty.</p><div class="article-body"><section><h2>Research standards</h2>${list(["We prioritise official, primary, or reputable sources for labour market context.", "We separate task exposure from total job replacement.", "We do not present a score as a prediction of redundancy.", "We update the model when better evidence becomes available.", "We avoid advice that depends on panic, miracle tools, or guaranteed outcomes."])}</section><section><h2>Review process</h2><p>Pages are reviewed for clarity, internal consistency, source quality, and whether the recommended actions match the risk profile of the role. The last reviewed date appears on role and methodology pages.</p></section><section><h2>Corrections</h2><p>If a score, source, or recommendation looks wrong, email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>. Corrections should include the page URL and the evidence you think should be considered.</p></section><section><h2>Commercial independence</h2><p>Future sponsorships or affiliate links should be disclosed where they appear. Commercial relationships should not decide a role's risk score.</p></section></div></main>`));
 writePage("advertise", renderStaticPage("advertise", "Advertise on Will AI Take My Job", "Reach UK workers searching for AI job risk, career moves, tools, training, and safer skills.", `<main id="main" class="article-page"><p class="eyebrow">Advertise</p><h1>Reach workers already thinking about AI and their career.</h1><p class="lead">Good-fit sponsors include AI tools, training providers, CV services, recruiters, career coaches, bootcamps, and productivity software.</p><div class="article-body"><section><h2>Available placements</h2>${list(["Homepage sponsor strip", "Role guide recommendation blocks", "Newsletter sponsorship", "Dedicated guide sponsorship", "Affiliate placement with disclosure"])}</section><section><h2>Contact</h2><p>Email <a href="mailto:sponsor@willaitakemyjob.co.uk">sponsor@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
-writePage("privacy", renderStaticPage("privacy", "Privacy Policy", "Privacy policy for Will AI Take My Job.", `<main id="main" class="article-page"><p class="eyebrow">Privacy</p><h1>Privacy policy</h1><p class="lead">This site is designed to collect as little data as possible until real analytics, email, or advertising tools are added.</p><div class="article-body"><section><h2>Email</h2><p>The demo waitlist stores email addresses in your browser only. Replace it with a real provider before launch.</p></section><section><h2>Advertising and affiliates</h2><p>Future affiliate or sponsored placements should be disclosed clearly on the page where they appear.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
+writePage("privacy", renderStaticPage("privacy", "Privacy Policy", "Privacy policy for Will AI Take My Job.", `<main id="main" class="article-page"><p class="eyebrow">Privacy</p><h1>Privacy policy</h1><p class="lead">This site uses Google Analytics 4 to understand which pages people visit and improve the guidance. The site keeps direct data collection deliberately light.</p><div class="article-body"><section><h2>Analytics</h2><p>Google Analytics 4 may collect usage information such as page views, device and browser details, approximate location, referral source, and interactions with the site. Google processes this information under its own terms and privacy controls.</p></section><section><h2>Email</h2><p>The demo waitlist stores email addresses in your browser only. Replace it with a real provider before launch.</p></section><section><h2>Advertising and affiliates</h2><p>Future affiliate or sponsored placements should be disclosed clearly on the page where they appear.</p></section><section><h2>Contact</h2><p>Email <a href="mailto:hello@willaitakemyjob.co.uk">hello@willaitakemyjob.co.uk</a>.</p></section></div></main>`));
 clusters.forEach((cluster) => writePage(cluster.slug, renderClusterPage(cluster)));
 roles.forEach((r) => writePage(r.guide.replace(/\/$/, ""), renderRolePage(r)));
 

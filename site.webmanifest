@@ -1,0 +1,18 @@
+{
+  "name": "Will AI Take My Job?",
+  "short_name": "Will AI",
+  "description": "AI job risk scores and practical career guidance for UK workers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ea",
+  "theme_color": "#f7f3ea",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

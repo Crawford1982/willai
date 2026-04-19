@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Will AI Take My Job?</title>
+  <desc id="desc">A social sharing card for the Will AI Take My Job website.</desc>
+  <rect width="1200" height="630" fill="#f7f3ea"/>
+  <rect x="70" y="70" width="1060" height="490" rx="34" fill="#fffaf1" stroke="#181713" stroke-width="8"/>
+  <rect x="106" y="106" width="116" height="116" rx="20" fill="#f0b429" stroke="#181713" stroke-width="7"/>
+  <path fill="#181713" d="M124 128h18l12.7 56.5 14-56.5h15l14.3 56.5 12.7-56.5h16.4L206.5 209h-16.2l-14.4-54.5L161.5 209h-16.2L124 128Z"/>
+  <text x="106" y="306" fill="#147d64" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="4">FREE UK AI JOB CHECKER</text>
+  <text x="106" y="396" fill="#181713" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="900">Will AI take your job?</text>
+  <text x="106" y="470" fill="#655f52" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">Risk scores, exposed tasks, and safer career moves.</text>
+  <circle cx="1026" cy="158" r="48" fill="#d8f3e7" stroke="#181713" stroke-width="6"/>
+  <circle cx="1026" cy="304" r="48" fill="#ffe0db" stroke="#181713" stroke-width="6"/>
+  <circle cx="1026" cy="450" r="48" fill="#f0b429" stroke="#181713" stroke-width="6"/>
+</svg>
