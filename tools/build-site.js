@@ -289,7 +289,7 @@ function renderIndex() {
         </div>
         <div class="result-panel" id="result-panel" aria-live="polite">
           <div class="result-empty">
-            <img src="https://images.unsplash.com/photo-1758594714142-2c1cf371ee7d?auto=format&fit=crop&w=900&q=80" alt="Laptop showing an AI workspace on a desk">
+            <img src="/hero-workspace.svg" alt="Illustrated desk with an AI job risk dashboard">
             <p>Pick a role to see the risk, the opportunity, and the next best move.</p>
           </div>
         </div>
@@ -338,7 +338,7 @@ function renderIndex() {
           </div>
         </div>
         <figure class="photo-panel">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" alt="Desk with laptop showing analytics charts">
+          <img src="/task-mix-dashboard.svg" alt="Illustrated dashboard showing task risk and safer career moves">
           <figcaption>AI risk is task risk. Your leverage comes from changing the task mix.</figcaption>
         </figure>
       </section>
@@ -710,6 +710,59 @@ When citing this site, prefer the specific role guide URL for job-specific claim
 `;
 }
 
+function heroWorkspaceSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">AI job risk workspace</title>
+  <desc id="desc">An illustrated desk with a laptop showing a job risk dashboard, notes, and career task cards.</desc>
+  <rect width="1200" height="820" fill="#fffaf1"/>
+  <rect x="74" y="74" width="1052" height="672" rx="28" fill="#f7f3ea" stroke="#181713" stroke-width="8"/>
+  <rect x="142" y="138" width="680" height="404" rx="22" fill="#181713"/>
+  <rect x="170" y="166" width="624" height="326" rx="12" fill="#fffaf1"/>
+  <rect x="204" y="204" width="250" height="32" rx="6" fill="#147d64"/>
+  <rect x="204" y="266" width="494" height="20" rx="6" fill="#d8cdb8"/>
+  <rect x="204" y="318" width="150" height="112" rx="12" fill="#d8f3e7" stroke="#181713" stroke-width="5"/>
+  <rect x="384" y="318" width="150" height="112" rx="12" fill="#ffe0db" stroke="#181713" stroke-width="5"/>
+  <rect x="564" y="318" width="150" height="112" rx="12" fill="#f0b429" stroke="#181713" stroke-width="5"/>
+  <path d="M222 404l38-46 28 26 42-52" fill="none" stroke="#147d64" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M402 396l35-30 28 18 42-50" fill="none" stroke="#d34d38" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M584 392l28-30 30 22 46-56" fill="none" stroke="#181713" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="240" y="542" width="470" height="34" rx="17" fill="#181713"/>
+  <rect x="292" y="576" width="368" height="38" rx="12" fill="#655f52"/>
+  <rect x="862" y="154" width="170" height="220" rx="14" fill="#f0b429" stroke="#181713" stroke-width="6"/>
+  <path d="M894 204h106M894 248h84M894 292h108" stroke="#181713" stroke-width="10" stroke-linecap="round"/>
+  <rect x="842" y="424" width="206" height="162" rx="14" fill="#d8f3e7" stroke="#181713" stroke-width="6"/>
+  <circle cx="898" cy="504" r="34" fill="#147d64"/>
+  <path d="M956 474h54M956 512h42M956 550h64" stroke="#181713" stroke-width="9" stroke-linecap="round"/>
+  <rect x="126" y="630" width="288" height="58" rx="14" fill="#ffe0db" stroke="#181713" stroke-width="6"/>
+  <rect x="456" y="640" width="234" height="38" rx="19" fill="#147d64"/>
+  <rect x="738" y="630" width="296" height="58" rx="14" fill="#fffaf1" stroke="#181713" stroke-width="6"/>
+</svg>
+`;
+}
+
+function taskMixDashboardSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750" role="img" aria-labelledby="title desc">
+  <title id="title">Task mix dashboard</title>
+  <desc id="desc">An illustrated analytics board showing task exposure, human judgement, and safer career moves.</desc>
+  <rect width="1000" height="750" fill="#fffaf1"/>
+  <rect x="58" y="58" width="884" height="634" rx="26" fill="#f7f3ea" stroke="#181713" stroke-width="8"/>
+  <rect x="104" y="112" width="792" height="92" rx="18" fill="#181713"/>
+  <rect x="132" y="142" width="260" height="24" rx="8" fill="#f0b429"/>
+  <rect x="700" y="136" width="150" height="36" rx="18" fill="#d8f3e7"/>
+  <rect x="116" y="260" width="230" height="304" rx="18" fill="#ffe0db" stroke="#181713" stroke-width="6"/>
+  <rect x="386" y="260" width="230" height="304" rx="18" fill="#d8f3e7" stroke="#181713" stroke-width="6"/>
+  <rect x="656" y="260" width="230" height="304" rx="18" fill="#f0b429" stroke="#181713" stroke-width="6"/>
+  <path d="M158 494h42V390h38v104h38V336h38v158" stroke="#181713" stroke-width="18" stroke-linecap="round"/>
+  <path d="M422 492c28-90 68-126 120-108 34 12 52 42 50 90" fill="none" stroke="#147d64" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="508" cy="378" r="38" fill="#147d64"/>
+  <path d="M700 506l44-74 52 38 52-96" fill="none" stroke="#181713" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="140" y="596" width="188" height="28" rx="14" fill="#181713"/>
+  <rect x="410" y="596" width="188" height="28" rx="14" fill="#181713"/>
+  <rect x="680" y="596" width="188" height="28" rx="14" fill="#181713"/>
+</svg>
+`;
+}
+
 function faviconSvg() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#f0b429"/>
@@ -816,6 +869,8 @@ write("CNAME", "willaitakemyjob.co.uk\n");
 write(".nojekyll", "");
 write("llms.txt", llmsTxt());
 write("llms-full.txt", llmsFullTxt());
+write("hero-workspace.svg", heroWorkspaceSvg());
+write("task-mix-dashboard.svg", taskMixDashboardSvg());
 write("favicon.svg", faviconSvg());
 writeBinary("favicon.ico", faviconIcoBuffer());
 write("social-card.svg", socialCardSvg());

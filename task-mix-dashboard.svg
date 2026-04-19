@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750" role="img" aria-labelledby="title desc">
+  <title id="title">Task mix dashboard</title>
+  <desc id="desc">An illustrated analytics board showing task exposure, human judgement, and safer career moves.</desc>
+  <rect width="1000" height="750" fill="#fffaf1"/>
+  <rect x="58" y="58" width="884" height="634" rx="26" fill="#f7f3ea" stroke="#181713" stroke-width="8"/>
+  <rect x="104" y="112" width="792" height="92" rx="18" fill="#181713"/>
+  <rect x="132" y="142" width="260" height="24" rx="8" fill="#f0b429"/>
+  <rect x="700" y="136" width="150" height="36" rx="18" fill="#d8f3e7"/>
+  <rect x="116" y="260" width="230" height="304" rx="18" fill="#ffe0db" stroke="#181713" stroke-width="6"/>
+  <rect x="386" y="260" width="230" height="304" rx="18" fill="#d8f3e7" stroke="#181713" stroke-width="6"/>
+  <rect x="656" y="260" width="230" height="304" rx="18" fill="#f0b429" stroke="#181713" stroke-width="6"/>
+  <path d="M158 494h42V390h38v104h38V336h38v158" stroke="#181713" stroke-width="18" stroke-linecap="round"/>
+  <path d="M422 492c28-90 68-126 120-108 34 12 52 42 50 90" fill="none" stroke="#147d64" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="508" cy="378" r="38" fill="#147d64"/>
+  <path d="M700 506l44-74 52 38 52-96" fill="none" stroke="#181713" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="140" y="596" width="188" height="28" rx="14" fill="#181713"/>
+  <rect x="410" y="596" width="188" height="28" rx="14" fill="#181713"/>
+  <rect x="680" y="596" width="188" height="28" rx="14" fill="#181713"/>
+</svg>
