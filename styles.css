@@ -400,7 +400,7 @@ button:hover,
 
 .job-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.9rem;
 }
 
@@ -447,6 +447,18 @@ button:hover,
   background: var(--pink);
   font-size: 0.78rem;
   font-weight: 900;
+}
+
+.badge.lower-risk {
+  background: var(--mint);
+}
+
+.badge.medium-risk {
+  background: #fef3cd;
+}
+
+.badge.high-risk {
+  background: var(--pink);
 }
 
 .split-section {
