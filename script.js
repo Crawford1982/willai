@@ -1,3 +1,5 @@
+window.WILL_AI_WORKSHEET_URL = "https://www.etsy.com/uk/listing/4565554795/uk-ai-job-worksheet-a4-printable-pack";
+
 const roles = window.WILL_AI_ROLES || [
   {
     "slug": "software-developer",
@@ -1372,6 +1374,22 @@ function riskLabel(score) { if (score >= 70) return "High change"; if (score >= 
 function renderResult(role) {
   if (!resultPanel) return;
   const marker = `calc(${role.risk}% - 0.325rem)`;
+  
+  // Check if worksheet URL is valid
+  const worksheetUrl = window.WILL_AI_WORKSHEET_URL || "";
+  const hasValidWorksheetUrl = worksheetUrl && (worksheetUrl.startsWith("https://") || worksheetUrl.startsWith("http://"));
+  
+  // Build the worksheet CTA if URL is valid
+  const worksheetCTA = hasValidWorksheetUrl ? `
+    <aside class="worksheet-cta">
+      <p class="eyebrow">Optional resource</p>
+      <h3>Plan your next move</h3>
+      <p>A printable A4 worksheet to map your AI-exposed tasks, identify safer skills, and plan career moves. Paid product, not required to use the free checker.</p>
+      <a href="${worksheetUrl}" target="_blank" rel="noopener noreferrer">View on Etsy</a>
+      <p class="disclosure-note">This is an optional paid resource. The free job risk checker remains completely free. See our <a href="/disclosure/">disclosure policy</a>.</p>
+    </aside>
+  ` : "";
+  
   resultPanel.innerHTML = `
     <article class="result-card">
       <div class="risk-topline">
@@ -1382,7 +1400,8 @@ function renderResult(role) {
       <div><h3>Tasks likely to change first</h3><ul class="result-list">${role.change.map((item) => `<li>${item}</li>`).join("")}</ul></div>
       <div><h3>Moves that make you safer</h3><ul class="result-list">${role.safer.map((item) => `<li>${item}</li>`).join("")}</ul></div>
       <div class="result-actions"><a href="/${role.guide || "jobs/"}">Read the full guide</a><a class="secondary" href="#newsletter">Track this role</a></div>
-    </article>`;
+    </article>
+    ${worksheetCTA}`;
 }
 function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", `?role=${encodeURIComponent(role.title)}#${role.slug}`); }
 if (suggestions) roles.forEach((role) => { const option = document.createElement("option"); option.value = role.title; suggestions.appendChild(option); });

@@ -354,6 +354,70 @@ button:hover,
   color: var(--ink);
 }
 
+.worksheet-cta {
+  margin: 1rem;
+  padding: 1.25rem;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.worksheet-cta .eyebrow {
+  margin: 0;
+}
+
+.worksheet-cta h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.worksheet-cta p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.worksheet-cta a {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--yellow);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  transition: transform 0.15s;
+  width: fit-content;
+}
+
+.worksheet-cta a:hover {
+  transform: translateY(-2px);
+}
+
+.worksheet-cta .disclosure-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.worksheet-cta .disclosure-note a {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.worksheet-cta .disclosure-note a:hover {
+  transform: none;
+}
+
 .ad-strip {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
