@@ -1,3 +1,6 @@
+// UK AI Job Worksheet listing URL (paste the Etsy listing URL here when available)
+window.WILL_AI_WORKSHEET_URL = "";
+
 const roles = window.WILL_AI_ROLES || [
   {
     "slug": "software-developer",
@@ -1372,6 +1375,18 @@ function riskLabel(score) { if (score >= 70) return "High change"; if (score >= 
 function renderResult(role) {
   if (!resultPanel) return;
   const marker = `calc(${role.risk}% - 0.325rem)`;
+  
+  const worksheetUrl = window.WILL_AI_WORKSHEET_URL || "";
+  const isValidWorksheetUrl = worksheetUrl && (worksheetUrl.startsWith("http://") || worksheetUrl.startsWith("https://"));
+  const worksheetBlock = isValidWorksheetUrl ? `
+    <div class="worksheet-cta">
+      <p class="eyebrow">Optional next step</p>
+      <h3>Get the A4 worksheet</h3>
+      <p>Turn this score into a 90-day plan you can take to a 1:1 or interview. Printable pack. The checker stays free.</p>
+      <a href="${worksheetUrl}" target="_blank" rel="noopener noreferrer">Get the worksheet</a>
+      <p class="worksheet-disclosure">Paid printable. We earn from the listing. See <a href="/disclosure/">disclosure</a>.</p>
+    </div>` : "";
+  
   resultPanel.innerHTML = `
     <article class="result-card">
       <div class="risk-topline">
@@ -1382,6 +1397,7 @@ function renderResult(role) {
       <div><h3>Tasks likely to change first</h3><ul class="result-list">${role.change.map((item) => `<li>${item}</li>`).join("")}</ul></div>
       <div><h3>Moves that make you safer</h3><ul class="result-list">${role.safer.map((item) => `<li>${item}</li>`).join("")}</ul></div>
       <div class="result-actions"><a href="/${role.guide || "jobs/"}">Read the full guide</a><a class="secondary" href="#newsletter">Track this role</a></div>
+      ${worksheetBlock}
     </article>`;
 }
 function selectRole(title) { const role = findRole(title); if (roleInput) roleInput.value = role.title; renderResult(role); if (location.pathname === "/") history.replaceState(null, "", `?role=${encodeURIComponent(role.title)}#${role.slug}`); }

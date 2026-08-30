@@ -354,6 +354,68 @@ button:hover,
   color: var(--ink);
 }
 
+.worksheet-cta {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 8px 8px 0 var(--yellow);
+}
+
+.worksheet-cta .eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.worksheet-cta h3 {
+  margin-bottom: 0.7rem;
+}
+
+.worksheet-cta p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.worksheet-cta a {
+  min-height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: var(--button);
+  color: var(--button-text);
+  padding: 0 1rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.worksheet-cta a:hover {
+  transform: translateY(-1px);
+}
+
+.worksheet-disclosure {
+  margin-top: 0.8rem !important;
+  font-size: 0.88rem;
+}
+
+.worksheet-disclosure a {
+  min-height: auto;
+  display: inline;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--green);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.worksheet-disclosure a:hover {
+  transform: none;
+}
+
 .ad-strip {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
