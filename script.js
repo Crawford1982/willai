@@ -1,5 +1,5 @@
 // UK AI Job Worksheet listing URL (paste the Etsy listing URL here when available)
-window.WILL_AI_WORKSHEET_URL = "";
+window.WILL_AI_WORKSHEET_URL = "https://www.etsy.com/uk/listing/4565554795/uk-ai-job-worksheet-a4-printable-pack";
 
 const roles = window.WILL_AI_ROLES || [
   {
